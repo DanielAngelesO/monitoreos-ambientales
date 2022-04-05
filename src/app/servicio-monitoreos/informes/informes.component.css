@@ -1,0 +1,12 @@
+.botones {
+    margin-bottom: 80px;
+}
+
+.span6 {
+    border-right: 1px dashed #333
+}
+
+.scroll-test {
+    height: 500px;
+    overflow-y: scroll;
+}

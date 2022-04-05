@@ -1,0 +1,236 @@
+<div id="navbar" class="navbar navbar-default ace-save-state">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small>
+          <i class="fa fa-leaf"></i>
+          Sistema de Monitoreos Ambientales
+        </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li class="light-blue dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+
+                        <span class="user-info">
+              <small>Bienvenido,</small>
+              Usuario
+            </span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-cog"></i> Configuraci&oacute;n
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-user"></i> Perfil
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-power-off"></i> Cerra Sesi&oacute;n
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /.navbar-container -->
+</div>
+
+<div class="main-container ace-save-state" id="main-container">
+
+    <div id="sidebar" class="sidebar responsive ace-save-state">
+
+        <ul class="nav nav-list">
+            <li class="active">
+                <a routerLink="home">
+                    <i class="menu-icon fa fa-home"></i>
+                    <span class="menu-text"> Inicio </span>
+                </a>
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-desktop"></i>
+                    <span class="menu-text">
+                    Servicio Monitoreos
+                    </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+                <ul class="submenu">
+                    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-caret-right"></i> Registrar Solicitud
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a routerLink="ServicioMonitereos/Informes">
+                            <i class="menu-icon fa fa-caret-right"></i> Generar Informe
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-list"></i>
+                    <span class="menu-text"> Plan de Monitoreo </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="#">
+                            <i class="menu-icon fa fa-caret-right"></i> Generar Plan
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="#">
+                            <i class="menu-icon fa fa-caret-right"></i> Estimaciones
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="#">
+                            <i class="menu-icon fa fa-caret-right"></i> Asignaci&oacute;n Analistas
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-briefcase"></i>
+                    <span class="menu-text"> Almacen Equipos </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a routerLink="Solicitud-Equipos">
+                            <i class="menu-icon fa fa-caret-right"></i> Solicitar Equipos
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a routerLink="Aprobacion-Equipos">
+                            <i class="menu-icon fa fa-caret-right"></i> Aprobaci&oacute;n de Equipos
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a routerLink="Almacen/Devoluciones">
+                            <i class="menu-icon fa fa-caret-right"></i> Devoluci&oacute;n de Equipos
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-search"></i>
+                    <span class="menu-text"> Consultas </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+                <ul class="submenu">                  
+                    <li class="">
+                        <a routerLink="ConsultaMonitoreos">
+                            <i class="menu-icon fa fa-caret-right"></i> Estado Monitoreo
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a routerLink="DatosEstadisticos">
+                            <i class="menu-icon fa fa-caret-right"></i> Estadisticos
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+
+
+        </ul>
+
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <router-outlet></router-outlet>
+
+        </div>
+        <!-- /.main-content -->
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bigger-120">
+      <span class="blue bolder">Monitoreos Ambientales</span> &copy; 2022
+                </span>
+
+                &nbsp; &nbsp;
+                <span class="action-buttons">
+      <a href="#">
+        <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+      </a>
+
+      <a>
+        <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+      </a>
+
+      <a>
+        <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+      </a>
+    </span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
