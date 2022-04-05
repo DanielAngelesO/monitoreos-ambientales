@@ -10,6 +10,8 @@ import { DevolucionEquiposComponent } from './almacen-equipos/devolucion-equipos
 import { InformesComponent } from './servicio-monitoreos/informes/informes.component';
 import { SolicitudEquiposComponent } from './solicitud-equipos/solicitud-equipos.component';
 import { AprobacionSolicitudEquiposComponent } from './aprobacion-solicitud-equipos/aprobacion-solicitud-equipos.component';
+import { AsignacionAnalistasComponent } from './plan-monitoreo/asignacion-analistas/asignacion-analistas.component';
+import { EstimacionComponent } from './plan-monitoreo/estimacion/estimacion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AprobacionSolicitudEquiposComponent } from './aprobacion-solicitud-equi
     DevolucionEquiposComponent,
     InformesComponent,
     SolicitudEquiposComponent,
-    AprobacionSolicitudEquiposComponent
+    AprobacionSolicitudEquiposComponent,
+    AsignacionAnalistasComponent,
+    EstimacionComponent
   ],
   imports: [
     BrowserModule,
