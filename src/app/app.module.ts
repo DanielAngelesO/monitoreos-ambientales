@@ -8,6 +8,8 @@ import { ConsultaMonitoreosComponent } from './Consultas/consulta-monitoreos/con
 import { EstadisticasComponent } from './Consultas/estadisticas/estadisticas.component';
 import { DevolucionEquiposComponent } from './almacen-equipos/devolucion-equipos/devolucion-equipos.component';
 import { InformesComponent } from './servicio-monitoreos/informes/informes.component';
+import { SolicitudEquiposComponent } from './solicitud-equipos/solicitud-equipos.component';
+import { AprobacionSolicitudEquiposComponent } from './aprobacion-solicitud-equipos/aprobacion-solicitud-equipos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { InformesComponent } from './servicio-monitoreos/informes/informes.compo
     ConsultaMonitoreosComponent,
     EstadisticasComponent,
     DevolucionEquiposComponent,
-    InformesComponent
+    InformesComponent,
+    SolicitudEquiposComponent,
+    AprobacionSolicitudEquiposComponent
   ],
   imports: [
     BrowserModule,
