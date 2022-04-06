@@ -1,0 +1,20 @@
+.tittle-analistas h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #777777
+}
+
+.recuadro {
+    margin-top: 100px;
+}
+
+.recuadro-centro {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.scroll-test {
+    height: 300px;
+    overflow-y: scroll;
+}
