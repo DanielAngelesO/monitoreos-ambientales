@@ -8,104 +8,180 @@
 </div>
 
 <div class="page-content">
-    <main class="container">
-        <div class="recuadro shadow p-3 mb-5 bg-white rounded">
-            <div class="recuadro-centro">
-                <br>
+    <div class="row">
+
+        <section class="col-sm-12">
+            <div class="tabbable">
+                <ul class="nav nav-tabs" id="myTab">
+
+
+                    <li class="active">
+                        <a data-toggle="tab" href="#tabEmpresa">
+                  Por Empresa
+                </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="tabCodigo" class="tab-pane fade in active">
+                        <div class="row">
+                            <section class="col-sm-12">
+
+
+                                <form class="form">
+                                    <fieldset>
+                                        <section class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="control-label"> RUC</label>
+                                                <div class="">
+                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+
+                                        <section class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label"> Razon Social</label>
+                                                <div class="">
+                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                    </fieldset>
+
+
+                                    <footer class="form-actions">
+                                        <div class="btn-group">
+                                            <button class="btn btn-success" type="button">
+                            <i class="ace-icon fa fa-registered"></i>
+                            Registrar
+                          </button>
+
+                                            <button class="btn btn-warning" type="button">
+                            <i class="ace-icon fa fa-eraser"></i>
+                            Limpiar
+                          </button>
+                                        </div>
+
+
+                                    </footer>
 
 
 
-                <br>
 
-                <div class="tittle-analistas mt-n1">
-                    <h2>REGISTRO DE SOLICITUDES DE SERVICIO</h2>
-                </div>
-
-                <br>
-                <!-- DATOS DE RAZÓN SOCIAL -->
-                <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Razón social: </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="static" placeholder="Razón social...">
-                    </div>
-                </div>
-                <br>
-                <!-- DATOS DE RUC -->
-                <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">RUC: </label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="static" placeholder="RUC...">
-                    </div>
-                </div>
-                <br>
-                <!-- DATOS DNI -->
-                <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Correo: </label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="static" placeholder="test@test.com">
-                    </div>
-                </div>
-                <br>
-
-                <!-- DATOS DE TELÉFONO -->
-
-                <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Teléfono: </label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="static" placeholder="2555555">
-                    </div>
-                </div>
-                <br>
-
-
-
-                <div>
-                    <div>
-                        <div class="tittle-analistas mt-n1 text-center">
-                            <h2>Plan de Servicio</h2>
+                                </form>
+                            </section>
                         </div>
                     </div>
 
-                    <br>
 
-                    <!-- Servicio -->
-                    <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Tipo de Servicio: </label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="static" placeholder="*****">
-                        </div>
-                    </div>
-                    <br>
-                    <!-- Parámetros -->
-                    <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Parámetros: </label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="static" placeholder="*****">
-                        </div>
-                    </div>
-                    <br>
-                    <!-- DATOS DNI -->
-                    <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Coordinadas de monitoreo: </label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="static" placeholder="*****">
-                        </div>
-                    </div>
-                    <br>
 
                 </div>
             </div>
             <br>
-            <div>
-                <div class="w-50" style="margin: 0 auto">
+            <div class="tab-content">
+                <div class="col-xs-6">
+                    <form class="form-horizontal" role="form">
 
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Registrar</button>
-                    <button type="button" class="btn btn-default btn-lg btn-block">Cancelar</button>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label " for="form-field-1"> Correo: </label>
+
+                            <div class="col-sm-10">
+                                <input type="email" id="form-field-1" placeholder="Username@mail.com" class="col-xs-15 col-sm-5" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Teléfono: </label>
+
+                            <div class="col-sm-10">
+                                <input type="number" id="form-field-1" placeholder="+51999999999" class="col-xs-15 col-sm-5" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de servicio: </label>
+
+
+                            <div class="col-xs-12 col-sm-9">
+                                <select id="food" class="multiselect" multiple="" style="display: none;">
+                                    <option value="cheese">Calidad de agua</option>
+                                    <option value="tomatoes">Calidad de aire</option>
+                                    <option value="mozarella">Ruido</option>
+                                    
+                                </select>
+                                <div class="btn-group"><button type="button" class="multiselect dropdown-toggle btn btn-white btn-primary" data-toggle="dropdown" title="None selected" aria-expanded="false"><span class="multiselect-selected-text">None selected</span> &nbsp;<b class="fa fa-caret-down"></b></button>
+                                    <ul class="multiselect-container dropdown-menu">
+                                        <li class="multiselect-item filter" value="0">
+                                            <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Search"><span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span></div>
+                                        </li>
+                                        <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> Calidad de agua</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span> Calidad de aire</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Ruido</label></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Parámetros: </label>
+
+
+                            <div class="col-xs-12 col-sm-9 ">
+                                <select id="food" class="multiselect" multiple="" style="display: none;">
+                                    <option value="PH">PH</option>
+                                    <option value="Conductividad">Conductividad eléctrica</option>
+                                    <option value="Oxígeno">Oxígeno no disuelto</option>
+                                    <option value="Turbidez">Turbidez</option>
+                                    <option value="Cloro">Cloro</option>
+                                    <option value="Material">Material particulado</option>
+                                    <option value="Ozono">Ozono</option>
+                                    <option value="Óxido">Óxido nitroso</option>
+                                    <option value="mozDióxidoarella">Dióxido de Azufre</option>
+                                    <option value="Monóxido">Monóxido de carbono</option>
+                                    <option value="Ruido">Ruido diurno y nocturno</option>
+                                    
+                                    
+                                </select>
+                                <div class="btn-group "><button type="button" class="multiselect dropdown-toggle btn btn-white btn-primary" data-toggle="dropdown" title="None selected" aria-expanded="false"><span class="multiselect-selected-text">None selected</span> &nbsp;<b class="fa fa-caret-down"></b></button>
+                                    <ul class="multiselect-container dropdown-menu scroll-test">
+                                        <li class="multiselect-item filter" value="0">
+                                            <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Search"><span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span></div>
+                                        </li>
+                                        <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> PH</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span>Conductividad eléctrica</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Oxígeno no disuelto</label></a></li>
+                                        <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> Turbidez</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span>Cloro</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Material particulado</label></a></li>
+                                        <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> Ozono</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span>Óxido nitroso</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Dióxido de Azufre</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span>Monóxido de carbono</label></a></li>
+                                        <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Ruido diurno y nocturno</label></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Coordenadas de monitoreo: </label>
+
+                            <div class="col-sm-10">
+                                <input type="text" id="form-field-1" placeholder="-12.1111801,-77.0628148,13" class="col-xs-15 col-sm-5" />
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <br>
+            <div class="text-center">
+                <button class="btn btn-success btn-block">Aceptar</button>
+                <button class="btn btn-danger btn-block">Cancelar</button>
+            </div>
+        </section>
 
 
-        </div>
-
-    </main>
+    </div>
 </div>
