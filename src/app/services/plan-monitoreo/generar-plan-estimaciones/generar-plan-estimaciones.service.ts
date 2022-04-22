@@ -4,14 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class EstimacionService {
+export class GenerarPlanEstimacionesService {
 
   constructor(
     private readonly http: HttpClient
   ) { }
 
 
-  __getEstimacion(){
-    return this.http.get('');
-  }
+  __getGenerarPlanEstimaciones(){
+    return this.http.get('');}
 }

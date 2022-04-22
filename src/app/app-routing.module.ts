@@ -8,7 +8,6 @@ import { InformesComponent } from './servicio-monitoreos/informes/informes.compo
 import { AprobacionSolicitudEquiposComponent } from './almacen-equipos/aprobacion-solicitud-equipos/aprobacion-solicitud-equipos.component';
 import { SolicitudEquiposComponent } from './almacen-equipos/solicitud-equipos/solicitud-equipos.component';
 import { AsignacionAnalistasComponent } from './plan-monitoreo/asignacion-analistas/asignacion-analistas.component';
-import { EstimacionComponent } from './plan-monitoreo/estimacion/estimacion.component';
 import { RegistroComponent } from './servicio-monitoreos/registro/registro.component';
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
 
@@ -20,8 +19,7 @@ const routes: Routes = [
   {path: 'Almacen/Devoluciones', component: DevolucionEquiposComponent},
   {path: 'Solicitud-Equipos', component: SolicitudEquiposComponent},
   {path: 'Aprobacion-Equipos', component: AprobacionSolicitudEquiposComponent},
-  {path: 'Plan-Monitoreo/Asignacion-Analista', component: AsignacionAnalistasComponent},
-  {path: 'Plan-Monitoreo/Estimacion', component: EstimacionComponent},
+  {path: 'Plan-Monitoreo/Asignacion-Analista', component: AsignacionAnalistasComponent},  
   {path: 'Plan-Monitoreo/Generar-Plan', component: GenerarPlanComponent},
   {path: 'ServicioMonitereos/Registro', component: RegistroComponent},
 ];

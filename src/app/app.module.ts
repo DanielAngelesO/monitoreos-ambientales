@@ -12,7 +12,7 @@ import { InformesComponent } from './servicio-monitoreos/informes/informes.compo
 import { SolicitudEquiposComponent } from './almacen-equipos/solicitud-equipos/solicitud-equipos.component';
 import { AprobacionSolicitudEquiposComponent } from './almacen-equipos/aprobacion-solicitud-equipos/aprobacion-solicitud-equipos.component';
 import { AsignacionAnalistasComponent } from './plan-monitoreo/asignacion-analistas/asignacion-analistas.component';
-import { EstimacionComponent } from './plan-monitoreo/estimacion/estimacion.component';
+
 import { RegistroComponent } from './servicio-monitoreos/registro/registro.component';
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
 
@@ -27,8 +27,7 @@ import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan
     InformesComponent,
     SolicitudEquiposComponent,
     AprobacionSolicitudEquiposComponent,
-    AsignacionAnalistasComponent,
-    EstimacionComponent,
+    AsignacionAnalistasComponent,    
     RegistroComponent,
     GenerarPlanComponent,
     
