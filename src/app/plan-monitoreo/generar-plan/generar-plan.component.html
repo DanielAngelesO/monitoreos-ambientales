@@ -2,7 +2,7 @@
     <ul class="breadcrumb">
         <li>
             <i class="ace-icon fa fa-registered"></i>
-            <a href="#"> &nbsp; Asignacion de especialista</a>
+            <a href="#"> &nbsp; Estimacion</a>
         </li>
     </ul>
 </div>
@@ -66,3 +66,79 @@
                             </section>
                         </div>
                     </div>
+
+                    <br>
+                    <div class="tab-content">
+                        <div class="col-xs-6">
+                            <form class="form-horizontal" role="form">
+        
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label " for="form-field-1"> Fecha de inicio: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="date" id="form-field-1" placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Fecha de finalizacion: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="date" id="form-field-1" placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Nombre del proyecto: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="text" id="form-field-1" placeholder="Proyecto" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Dispostivo: </label>
+        
+        
+                                    <div class="col-xs-12 col-sm-9">
+                                        <select id="food" class="multiselect" multiple="" style="display: none;">
+                                            <option value="cheese">Modelo 1</option>
+                                            <option value="tomatoes">Modelo 2</option>
+                                            <option value="mozarella">Modelo 3</option>
+                                            
+                                        </select>
+                                        <div class="btn-group"><button type="button" class="multiselect dropdown-toggle btn btn-white btn-primary" data-toggle="dropdown" title="None selected" aria-expanded="false"><span class="multiselect-selected-text">None selected</span> &nbsp;<b class="fa fa-caret-down"></b></button>
+                                            <ul class="multiselect-container dropdown-menu">
+                                                <li class="multiselect-item filter" value="0">
+                                                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Search"><span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span></div>
+                                                </li>
+                                                <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> Modelo 1 </label></a></li>
+                                                <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span> Modelo 2 </label></a></li>
+                                                <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Modelo 3 </label></a></li>
+        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label " for="form-field-1"> Cantidad: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="number" id="form-field-1" placeholder="1 - 15" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Precio: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="text" id="form-field-1" placeholder="Precio estimado" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+            <div class="text-center">
+                <button class="btn btn-success btn-block">Agregar</button>
+                <button class="btn btn-danger btn-block">Cancelar</button>
+            </div>
