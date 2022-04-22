@@ -1,90 +1,122 @@
 <div class="breadcrumbs ace-save-state" id="breadcrumbs">
     <ul class="breadcrumb">
         <li>
-            <i class="ace-icon fa fa-list"></i>
-            <a href="#"> &nbsp; Asignación de Analistas</a>
+            <i class="ace-icon fa fa-registered"></i>
+            <a href="#"> &nbsp; Asignacion de especialista</a>
         </li>
     </ul>
 </div>
 
-<div id="page-wrapper">
+<div class="page-content">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Forms</h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="container" class="panel-heading">
-                    <h1>Asignación de especialista</h1>
-                </div>
-                <h2 class="text-center">Datos de la empresa</h2>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-4">
-                            <form>
-                                <div>
-                                    <label for="number0" class="form-label">Codigo de solicitud</label>
-                                    <input type="number" class="form-control" id="number0" placeholder="Codigo">
-                                </div>
-                                <div>
-                                    <label for="text1" class="form-label">Empresa</label>
-                                    <input type="text" class="form-control" id="text1" placeholder="Empresa">
-                                </div>
-                                <div>
-                                    <label for="number1" class="form-label">RUC</label>
-                                    <input type="number" class="form-control" id="number2" placeholder="RUC">
-                                </div>
-                                <div>
-                                    <label for="email1" class="form-label">Correo</label>
-                                    <input type="email" class="form-control" id="email1" placeholder="Email">
+
+        <section class="col-sm-12">
+            <div class="tabbable">
+                <ul class="nav nav-tabs" id="myTab">
+
+
+                    <li class="active">
+                        <a data-toggle="tab" href="#tabEmpresa">
+                  Por Empresa
+                </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="tabCodigo" class="tab-pane fade in active">
+                        <div class="row">
+                            <section class="col-sm-12">
+
+
+                                <form class="form">
+                                    <fieldset>
+                                        <section class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="control-label"> Codigo de Solicitud </label>
+                                                <div class="">
+                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+
+                                    </fieldset>
+
+
+                                    <footer class="form-actions">
+                                        <div class="btn-group">
+                                            <button class="btn btn-success" type="button">
+                            <i class="ace-icon fa fa-registered"></i>
+                            Buscar
+                          </button>
+
+                                            <button class="btn btn-warning" type="button">
+                            <i class="ace-icon fa fa-eraser"></i>
+                            Limpiar
+                          </button>
+                                        </div>
+
+
+                                    </footer>
+
+
+
+
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="tab-content">
+                        <div class="col-xs-6">
+                            <form class="form-horizontal" role="form">
+        
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Proyecto: </label>
+                                    
+                                    <div class="col-xs-12 col-sm-9">
+                                        <select id="food" class="multiselect" multiple="" style="display: none;">
+                                            <option value="cheese">Proyecto 1</option>
+                                            <option value="tomatoes">Proyecto 2</option>
+                                            <option value="mozarella">Proyecto 3</option>
+                                            
+                                        </select>
+                                        <div class="btn-group"><button type="button" class="multiselect dropdown-toggle btn btn-white btn-primary" data-toggle="dropdown" title="None selected" aria-expanded="false"><span class="multiselect-selected-text">None selected</span> &nbsp;<b class="fa fa-caret-down"></b></button>
+                                            <ul class="multiselect-container dropdown-menu">
+                                                <li class="multiselect-item filter" value="0">
+                                                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Search"><span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span></div>
+                                                </li>
+                                                <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> Proyecto 1 </label></a></li>
+                                                <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span> Proyecto 2 </label></a></li>
+                                                <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Proyecto 3 </label></a></li>
+        
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
-                        <br>
-                        <h2 class="text-center">Especialista</h2>
-                        <div>
-                            <p>Escoga al especialista a cargo:</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  Especialista 1
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Especialista 2
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Especialista 3
-                                </label>
-                            </div>
-                        </div>
-                        <br>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-lg">Aceptar</button>
-                            <button type="button" class="btn btn-secondary btn-lg">Cancelar</button>
-                        </div>
 
-                        <!-- /.col-lg-6 (nested) -->
-
-                        <!-- /.col-lg-6 (nested) -->
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.panel-body -->
+                        <div class="tab-content">
+                            <div class="col-xs-6">
+                                <form class="form-horizontal" role="form">
+            
+                                    <div class="form-group">
+                                        <select class="form-select" multiple aria-label="multiple select example">
+                                            <option selected>Seleccione un Analista</option>
+                                            <option value="1">Analista 1</option>
+                                            <option value="2">Analista 2</option>
+                                            <option value="3">Analista 3</option>
+                                            <option value="3">Analista 4</option>
+                                            <option value="3">Analista 5</option>
+                                          </select>
+                                    </div>
+                                </form>
+                            </div>
+                    </div>    
+            <br>
+            <div class="text-center">
+                <button class="btn btn-success btn-block">Asignar</button>
+                <button class="btn btn-danger btn-block">Cancelar</button>
             </div>
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /#page-wrapper -->

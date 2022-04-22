@@ -1,70 +1,144 @@
 <div class="breadcrumbs ace-save-state" id="breadcrumbs">
-<ul class="breadcrumb">
-    <li>
-    <i class="ace-icon fa fa-search"></i>
-    <a href="#"> &nbsp; Estimación</a>
-    </li>      
-</ul>
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-registered"></i>
+            <a href="#"> &nbsp; Estimacion</a>
+        </li>
+    </ul>
 </div>
 
 <div class="page-content">
     <div class="row">
-        <div class="col-sm-12">
+
+        <section class="col-sm-12">
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
+
+
                     <li class="active">
-                        <a data-toggle="tab" href="#home">
-                            <i class="green ace-icon fa fa-home bigger-120"></i>
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a data-toggle="tab" href="#messages">
-                            Messages
-                            <span class="badge badge-danger">4</span>
-                        </a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            Dropdown &nbsp;
-                            <i class="ace-icon fa fa-caret-down bigger-110 width-auto"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-info">
-                            <li>
-                                <a data-toggle="tab" href="#dropdown1">@fat</a>
-                            </li>
-
-                            <li>
-                                <a data-toggle="tab" href="#dropdown2">@mdo</a>
-                            </li>
-                        </ul>
+                        <a data-toggle="tab" href="#tabEmpresa">
+                  Por Empresa
+                </a>
                     </li>
                 </ul>
 
                 <div class="tab-content">
-                    <div id="home" class="tab-pane fade in active">
-                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    <div id="tabCodigo" class="tab-pane fade in active">
+                        <div class="row">
+                            <section class="col-sm-12">
+
+
+                                <form class="form">
+                                    <fieldset>
+                                        <section class="col-sm-2">
+                                            <div class="form-group">
+                                                <label class="control-label"> Codigo de Solicitud </label>
+                                                <div class="">
+                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+
+                                    </fieldset>
+
+
+                                    <footer class="form-actions">
+                                        <div class="btn-group">
+                                            <button class="btn btn-success" type="button">
+                            <i class="ace-icon fa fa-registered"></i>
+                            Buscar
+                          </button>
+
+                                            <button class="btn btn-warning" type="button">
+                            <i class="ace-icon fa fa-eraser"></i>
+                            Limpiar
+                          </button>
+                                        </div>
+
+
+                                    </footer>
+
+
+
+
+                                </form>
+                            </section>
+                        </div>
                     </div>
 
-                    <div id="messages" class="tab-pane fade">
-                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
-                    </div>
+                    <br>
+                    <div class="tab-content">
+                        <div class="col-xs-6">
+                            <form class="form-horizontal" role="form">
+        
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label " for="form-field-1"> Fecha de inicio: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="date" id="form-field-1" placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Fecha de finalizacion: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="date" id="form-field-1" placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
 
-                    <div id="dropdown1" class="tab-pane fade">
-                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
-                    </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Nombre del proyecto: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="text" id="form-field-1" placeholder="Proyecto" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
 
-                    <div id="dropdown2" class="tab-pane fade">
-                        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Dispostivo: </label>
+        
+        
+                                    <div class="col-xs-12 col-sm-9">
+                                        <select id="food" class="multiselect" multiple="" style="display: none;">
+                                            <option value="cheese">Modelo 1</option>
+                                            <option value="tomatoes">Modelo 2</option>
+                                            <option value="mozarella">Modelo 3</option>
+                                            
+                                        </select>
+                                        <div class="btn-group"><button type="button" class="multiselect dropdown-toggle btn btn-white btn-primary" data-toggle="dropdown" title="None selected" aria-expanded="false"><span class="multiselect-selected-text">None selected</span> &nbsp;<b class="fa fa-caret-down"></b></button>
+                                            <ul class="multiselect-container dropdown-menu">
+                                                <li class="multiselect-item filter" value="0">
+                                                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text" placeholder="Search"><span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span></div>
+                                                </li>
+                                                <li><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="cheese"><span class="lbl"></span> Modelo 1 </label></a></li>
+                                                <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="tomatoes"><span class="lbl"></span> Modelo 2 </label></a></li>
+                                                <li class=""><a tabindex="0"><label class="checkbox"><input type="checkbox" class="ace" value="mozarella"><span class="lbl"></span> Modelo 3 </label></a></li>
+        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label " for="form-field-1"> Cantidad: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="number" id="form-field-1" placeholder="1 - 15" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Precio: </label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="text" id="form-field-1" placeholder="Precio estimado" class="col-xs-15 col-sm-5" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                    <br>
+            <div class="text-center">
+                <button class="btn btn-success btn-block">Agregar</button>
+                <button class="btn btn-danger btn-block">Cancelar</button>
             </div>
-        </div><!-- /.col -->
-
-    
-    </div><!-- /.row -->
-
-</div>
