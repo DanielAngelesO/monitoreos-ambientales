@@ -10,9 +10,12 @@ import { SolicitudEquiposComponent } from './almacen-equipos/solicitud-equipos/s
 import { AsignacionAnalistasComponent } from './plan-monitoreo/asignacion-analistas/asignacion-analistas.component';
 import { RegistroComponent } from './servicio-monitoreos/registro/registro.component';
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  /* { path: '', redirectTo: '/login', pathMatch: 'full' }, */
   {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'ConsultaMonitoreos', component: ConsultaMonitoreosComponent },
   {path: 'DatosEstadisticos', component: EstadisticasComponent},
   {path: 'ServicioMonitereos/Informes', component: InformesComponent},
