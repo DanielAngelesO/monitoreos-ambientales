@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from 'src/app/cargar-scripts.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _CargaScripts:CargarScriptsService) {
 
-  ngOnInit(): void {
+    _CargaScripts.Carga(["registro"])
+   }
+
+  ngOnInit() {
+    
+    
   }
-
 }
 
