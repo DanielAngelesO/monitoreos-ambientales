@@ -14,4 +14,9 @@ export class RegistroService {
   __getRegistro(){
     return this.http.get('');
   }
+
+  __be_insert(data:any){
+    console.log(data);
+    return data;
+  }
 }

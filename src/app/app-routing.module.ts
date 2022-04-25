@@ -13,7 +13,7 @@ import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  /* { path: '', redirectTo: '/login', pathMatch: 'full' }, */
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'ConsultaMonitoreos', component: ConsultaMonitoreosComponent },

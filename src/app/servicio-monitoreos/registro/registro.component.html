@@ -9,51 +9,97 @@
 
 <div class="page-content">
     <div class="row">
+        <form [formGroup]="projectForm">
+            <section class="col-sm-12">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs" id="myTab">
 
-        <section class="col-sm-12">
-            <div class="tabbable">
-                <ul class="nav nav-tabs" id="myTab">
 
-
-                    <li class="active">
-                        <a data-toggle="tab" href="#tabEmpresa">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tabEmpresa">
                             Cliente
                         </a>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
 
-                <div class="tab-content">
-                    <div id="tabCodigo" class="tab-pane fade in active">
+                    <div class="tab-content">
+                        <div id="tabCodigo" class="tab-pane fade in active">
+                            <div class="row">
+                                <section class="col-sm-12">
+
+
+                                    <form class="form">
+                                        <fieldset>
+                                            <section class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label class="control-label"> RUC</label>
+                                                    <div class="">
+                                                        <input type="text" id="" placeholder="" class="col-sm-12" formControlName="Ruc_Cliente" />
+                                                    </div>
+                                                </div>
+                                            </section>
+
+
+                                            <section class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label class="control-label"> Razon Social</label>
+                                                    <div class="">
+                                                        <input type="text" id="" placeholder="" class="col-sm-12" formControlName="Razon_Social" />
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                        </fieldset>
+
+
+
+
+
+
+
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
+                        <br>
+
                         <div class="row">
                             <section class="col-sm-12">
 
-
                                 <form class="form">
                                     <fieldset>
-                                        <section class="col-sm-2">
+                                        <section class="col-sm-3">
                                             <div class="form-group">
-                                                <label class="control-label"> RUC</label>
+                                                <label class="control-label "> Correo: </label>
+
                                                 <div class="">
-                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                    <input type="email" id="" placeholder="Username@mail.com" class="col-sm-12" formControlName="Correo" />
                                                 </div>
                                             </div>
                                         </section>
 
+                                        <section class="col-sm-3">
 
-                                        <section class="col-sm-4">
                                             <div class="form-group">
-                                                <label class="control-label"> Razon Social</label>
+                                                <label class="control-label"> Teléfono:
+                                            </label>
+
                                                 <div class="">
-                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                    <input type="number" id="" placeholder="+51999999999" class="col-sm-12" formControlName="Telefono" />
                                                 </div>
                                             </div>
                                         </section>
 
+                                        <section class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="control-label" for=""> Contacto: </label>
+
+                                                <div class="">
+                                                    <input type="text" id="" placeholder="Pepito Perez" class="col-sm-12" formControlName="Contacto" />
+                                                </div>
+                                            </div>
+                                        </section>
                                     </fieldset>
-
-
-
-
 
 
 
@@ -61,20 +107,28 @@
                             </section>
                         </div>
                     </div>
-                    <br>
 
+                </div>
+                <br>
+
+
+                <div class="tab-content">
+                    <h2 class="col-xs-6">Información del Servicio</h2>
+                    <br>
                     <div class="row">
                         <section class="col-sm-12">
 
-                            <form class="form">
+
+                            <form class="form" role="form">
                                 <fieldset>
+
                                     <section class="col-sm-3">
+
                                         <div class="form-group">
-                                            <label class="control-label "> Correo: </label>
+                                            <label class="control-label "> Fecha tentativa: </label>
 
                                             <div class="">
-                                                <input type="email" id="" placeholder="Username@mail.com"
-                                                    class="col-sm-12" />
+                                                <input type="date" placeholder="Username@mail.com" class="col-sm-12" formControlName="Fecha_Tentativa" />
                                             </div>
                                         </div>
                                     </section>
@@ -82,165 +136,106 @@
                                     <section class="col-sm-3">
 
                                         <div class="form-group">
-                                            <label class="control-label"> Teléfono:
-                                            </label>
+                                            <label class="control-label "> Descripción del servicio </label>
 
                                             <div class="">
-                                                <input type="number" id="" placeholder="+51999999999"
-                                                    class="col-sm-12" />
+                                                <input type="text" placeholder="Descripción del proyecto..." class="col-sm-12" formControlName="Descripcion_Servicio" />
                                             </div>
                                         </div>
                                     </section>
 
                                     <section class="col-sm-3">
+
                                         <div class="form-group">
-                                            <label class="control-label" for=""> Contacto: </label>
-
-                                            <div class="">
-                                                <input type="text" id="" placeholder="Pepito Perez" class="col-sm-12" />
-                                            </div>
-                                        </div>
-                                    </section>
-                                </fieldset>
-
-
-
-                            </form>
-                        </section>
-                    </div>
-                </div>
-
-            </div>
-            <br>
-
-
-            <div class="tab-content">
-                <h2 class="col-xs-6">Información del Servicio</h2>
-                <br>
-                <div class="row">
-                    <section class="col-sm-12">
-
-
-                        <form class="form" role="form">
-                            <fieldset>
-
-                                <section class="col-sm-3">
-
-                                    <div class="form-group">
-                                        <label class="control-label "> Fecha tentativa: </label>
-
-                                        <div class="">
-                                            <input type="date" placeholder="Username@mail.com" class="col-sm-12" />
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section class="col-sm-3">
-
-                                    <div class="form-group">
-                                        <label class="control-label "> Descripción del servicio </label>
-
-                                        <div class="">
-                                            <input type="text" placeholder="Descripción del proyecto..."
-                                                class="col-sm-12" />
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section class="col-sm-3">
-
-                                    <div class="form-group">
-                                        <label class="control-label"> Tipo de servicio:
+                                            <label class="control-label"> Tipo de servicio:
                                         </label>
 
-                                        <div class="">
-                                            <select id="inputState" class="col-sm-12">
+                                            <div class="">
+                                                <select id="inputState" class="col-sm-12" formControlName="Tipo_Servicio">
                                                 <option selected>Elige una opción</option>
                                                 <option>Calidad de agua</option>
                                                 <option>Calidad de aire</option>
                                                 <option>Ruido</option>
                                             </select>
+                                            </div>
+
                                         </div>
+                                    </section>
+                                    <section class="col-sm-3">
+                                        <div class="form-group">
+                                            <label class="control-label " for=""> Precio de referencia </label>
 
-                                    </div>
-                                </section>
-                                <section class="col-sm-3">
-                                    <div class="form-group">
-                                        <label class="control-label " for=""> Precio de referencia </label>
-
-                                        <div class="">
-                                            <input type="number" id="" placeholder="100.0"
-                                                class="col-sm-12 form-control" />
+                                            <div class="">
+                                                <input type="number" id="" placeholder="100.0" class="col-sm-12 form-control" formControlName="Precio_Referencia" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            </fieldset>
-                        </form>
+                                    </section>
+                                </fieldset>
+                            </form>
 
 
-                    </section>
+                        </section>
 
 
+
+                    </div>
+                </div>
+                <br>
+                <div class="tab-content">
+                    <h2 class="col-xs-6">Lugares de Muestreo</h2> <br>
+                    <div class="row">
+
+                        <section class="col-sm-12">
+
+
+                            <table class="table table-bordered" id="childTable">
+                                <thead class="table-info">
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Lugar de muestreo</th>
+                                        <th scope="col">Coordenada Longitud </th>
+                                        <th scope="col">Coordenada Latitud</th>
+                                        <th scope="col">Nombre del punto</th>
+                                        <th scope=""></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td class="col-sm-4">
+                                            <input type="text" name="name" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="school" class="form-control" />
+                                        </td>
+                                        <td class="col-sm-2">
+                                            <input type="text" name="year" class="form-control" />
+                                        </td>
+                                        <td class="col-sm-2">
+                                            <input type="text" name="age" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <input type="button" class="btn btn-block btn-default" id="addrow" onclick="childrenRow()" value="+" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
 
                 </div>
-            </div>
-            <br>
-            <div class="tab-content">
-                <h2 class="col-xs-6">Lugares de Muestreo</h2> <br>
-                <div class="row">
-
-                    <section class="col-sm-12">
-
-
-                        <table class="table table-bordered" id="childTable">
-                            <thead class="table-info">
-                              <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Lugar de muestreo</th>
-                                <th scope="col">Coordenada Longitud </th>
-                                <th scope="col">Coordenada Latitud</th>
-                                <th scope="col">Nombre del punto</th>
-                                <th scope=""></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td class="col-sm-4">
-                                  <input type="text" name="name" class="form-control" />
-                                </td>
-                                <td>
-                                  <input type="text" name="school" class="form-control" />
-                                </td>
-                                <td class="col-sm-2">
-                                  <input type="text" name="year" class="form-control" />
-                                </td>
-                                <td class="col-sm-2">
-                                  <input type="text" name="age" class="form-control" />
-                                </td>
-                                <td>
-                                  <input type="button" class="btn btn-block btn-default" id="addrow" onclick="childrenRow()" value="+" />
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </section>
+                <br>
+                <div class="text-center">
+                    <button (click)="__onSubmit()" class="btn btn-success btn-block">Registrar</button>
+                    <button class="btn btn-danger btn-block">Cancelar</button>
                 </div>
+            </section>
 
-            </div>
-            <br>
-            <div class="text-center">
-                <button class="btn btn-success btn-block">Registrar</button>
-                <button class="btn btn-danger btn-block">Cancelar</button>
-            </div>
-        </section>
+        </form>
 
-
-       
     </div>
 </div>
 
 
 <script>
-   
 </script>
