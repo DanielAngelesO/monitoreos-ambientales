@@ -78,8 +78,8 @@
 
     <!-- inline scripts related to this page -->
     <script type="text/javascript">
-        jQuery(function ($) {
-            $('.easy-pie-chart.percentage').each(function () {
+        jQuery(function($) {
+            $('.easy-pie-chart.percentage').each(function() {
                 var $box = $(this).closest('.infobox');
                 var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
                 var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
@@ -95,7 +95,7 @@
                 });
             })
 
-            $('.sparkline').each(function () {
+            $('.sparkline').each(function() {
                 var $box = $(this).closest('.infobox');
                 var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
                 $(this).sparkline('html', {
@@ -179,7 +179,7 @@
             var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
             var previousPoint = null;
 
-            placeholder.on('plothover', function (event, pos, item) {
+            placeholder.on('plothover', function(event, pos, item) {
                 if (item) {
                     if (previousPoint != item.seriesIndex) {
                         previousPoint = item.seriesIndex;
@@ -198,7 +198,7 @@
             });
 
             /////////////////////////////////////
-            $(document).one('ajaxloadstart.page', function (e) {
+            $(document).one('ajaxloadstart.page', function(e) {
                 $tooltip.remove();
             });
 
@@ -291,7 +291,7 @@
             //so disable dragging when clicking on label
             var agent = navigator.userAgent.toLowerCase();
             if (ace.vars['touch'] && ace.vars['android']) {
-                $('#tasks').on('touchstart', function (e) {
+                $('#tasks').on('touchstart', function(e) {
                     var li = $(e.target).closest('#tasks li');
                     if (li.length == 0) return;
                     var label = li.find('label.inline').get(0);
@@ -306,20 +306,20 @@
                 placeholder: 'draggable-placeholder',
                 forcePlaceholderSize: true,
                 tolerance: 'pointer',
-                stop: function (event, ui) {
+                stop: function(event, ui) {
                     //just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
                     $(ui.item).css('z-index', 'auto');
                 }
             });
             $('#tasks').disableSelection();
-            $('#tasks input:checkbox').removeAttr('checked').on('click', function () {
+            $('#tasks input:checkbox').removeAttr('checked').on('click', function() {
                 if (this.checked) $(this).closest('li').addClass('selected');
                 else $(this).closest('li').removeClass('selected');
             });
 
 
             //show the dropdowns on top or bottom depending on window height and menu position
-            $('#task-tab .dropdown-hover').on('mouseenter', function (e) {
+            $('#task-tab .dropdown-hover').on('mouseenter', function(e) {
                 var offset = $(this).offset();
 
                 var $w = $(window)
@@ -329,9 +329,6 @@
             });
 
         })
-
-
-        
     </script>
 
 </body>
