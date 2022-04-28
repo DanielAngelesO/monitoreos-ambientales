@@ -6,7 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
+  constructor(
+    private readonly http: HttpClient
+  ) { }
 
+  
 
 
   json = {
@@ -16,10 +20,13 @@ export class LoginService {
     "data": null
   }
 
-  constructor(
-    private readonly http: HttpClient
-  ) { }
+  __be_login(data: any){
+    console.log(data)
+    return this.http.post<any>('https://localhost:44309/api/User/Validar', data);
+  }
 
+  __be_insert(data: any){
+  }
 
   __be_validar(user:any, pass:any){
 

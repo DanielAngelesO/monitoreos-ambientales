@@ -11,11 +11,14 @@ import { AsignacionAnalistasComponent } from './plan-monitoreo/asignacion-analis
 import { RegistroComponent } from './servicio-monitoreos/registro/registro.component';
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './login/logout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LogoutComponent},
+
   {path: 'ConsultaMonitoreos', component: ConsultaMonitoreosComponent },
   {path: 'DatosEstadisticos', component: EstadisticasComponent},
   {path: 'ServicioMonitereos/Informes', component: InformesComponent},

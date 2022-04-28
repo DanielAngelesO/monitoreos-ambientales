@@ -10,4 +10,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'SMA';
   
+  token = sessionStorage.getItem('token');
+  user = sessionStorage.getItem('user');
 }
