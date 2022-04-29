@@ -3,7 +3,7 @@ import { Form, FormBuilder, Validators, FormGroup, FormArray } from '@angular/fo
 import { Router } from '@angular/router';
 import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { RegistroService } from 'src/app/services/servicio-monitoreos/registro/registro.service';
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -50,12 +50,12 @@ export class RegistroComponent implements OnInit {
 
   __onSubmit() {
     if (this.projectForm.valid) {
-      Swal.fire({
-        title: 'Registro',
-        text: '¡Se ha registrado!',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-      })
+      // Swal.fire({
+      //   title: 'Registro',
+      //   text: '¡Se ha registrado!',
+      //   icon: 'success',
+      //   confirmButtonText: 'Ok'
+      // })
       
       this.__insert(this.projectForm.value);
       

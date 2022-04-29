@@ -8,29 +8,23 @@
         </small>
             </a>
         </div>
-        <!-- *ngIf="token != null" -->
-        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+        <!--  -->
+        <div *ngIf="token != null" class="navbar-buttons navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-
-                        <span class="user-info">
-              <small>Bienvenido,</small>
-              Usuario
-            </span>
-
+                        <span class="user-info"><small>Bienvenido,</small>Usuario</span>
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
-
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="#">
+                            <a >
                                 <i class="ace-icon fa fa-cog"></i> Configuraci&oacute;n
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a >
                                 <i class="ace-icon fa fa-user"></i> Perfil
                             </a>
                         </li>
@@ -38,7 +32,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a routerLink="logout">
                                 <i class="ace-icon fa fa-power-off"></i> Cerra Sesi&oacute;n
                             </a>
                         </li>
@@ -54,7 +48,7 @@
 
 
 
-    <div id="sidebar" class="sidebar responsive ace-save-state">
+    <div *ngIf="token != null" id="sidebar" class="sidebar responsive ace-save-state">
 
         <ul class="nav nav-list">
             <li class="active">
@@ -212,9 +206,8 @@
         <div class="footer-inner">
             <div class="footer-content">
                 <span class="bigger-120">
-      <span class="blue bolder">Monitoreos Ambientales</span> &copy; 2022
+                <span class="blue bolder">Monitoreos Ambientales</span> &copy; 2022
                 </span>
-
                 &nbsp; &nbsp;
                 <span class="action-buttons">
       <a href="#">

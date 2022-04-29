@@ -14,5 +14,9 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
       sessionStorage.clear();
+      this.router.navigateByUrl('/login', { skipLocationChange: false }).then(() => {
+        this.router.navigate(['login'])
+        window.location.reload()
+      })
   }
 }

@@ -12,4 +12,5 @@ export class AppComponent {
   
   token = sessionStorage.getItem('token');
   user = sessionStorage.getItem('user');
+  perfil = sessionStorage.getItem('profile');
 }
