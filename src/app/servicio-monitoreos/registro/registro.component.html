@@ -9,7 +9,7 @@
 
 <div class="page-content">
     <div class="row">
-        <form [formGroup]="projectForm">
+        <form (ngSubmit)="__onSubmit()" [formGroup]="projectForm">
             <section class="col-sm-12">
                 <div class="tabbable">
                     <ul class="nav nav-tabs" id="myTab">
@@ -204,16 +204,16 @@
                                     <tr>
                                         <th scope="row">1</th>
                                         <td class="col-sm-4">
-                                            <input type="text" name="name" class="form-control" formControlName="Lugar_Muestreo" />
+                                            <input type="text" name="lugar" class="form-control" formControlName="Lugar_Muestreo" />
                                         </td>
                                         <td>
-                                            <input type="text" name="school" class="form-control" formControlName="Coordenada_Longitud" />
+                                            <input type="text" name="longitud" class="form-control" formControlName="Coordenada_Longitud" />
                                         </td>
                                         <td class="col-sm-2">
-                                            <input type="text" name="year" class="form-control" formControlName="Coordenada_Latitud" />
+                                            <input type="text" name="latitud" class="form-control" formControlName="Coordenada_Latitud" />
                                         </td>
                                         <td class="col-sm-2">
-                                            <input type="text" name="age" class="form-control" formControlName="Nombre_Punto" />
+                                            <input type="text" name="punto" class="form-control" formControlName="Nombre_Punto" />
                                         </td>
                                         <td>
                                             <input type="button" class="btn btn-block btn-default" id="addrow" onclick="childrenRow()" value="+" />

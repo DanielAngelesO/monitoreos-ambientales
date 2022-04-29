@@ -21,7 +21,7 @@ import { AsignacionAnalistasComponent } from './plan-monitoreo/asignacion-analis
 import { RegistroComponent } from './servicio-monitoreos/registro/registro.component';
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     CargarScriptsService
