@@ -24,21 +24,35 @@ export class RegistroComponent implements OnInit {
     _CargaScripts.Carga(["registro"])
   }
 
-  projectForm = this.fb.group({
+  formCliente = this.fb.group({
     Ruc_Cliente: ['', Validators.required],
     Razon_Social: ['', Validators.required],
     Correo: ['', Validators.required],
     Telefono: ['', Validators.required],
     Contacto: ['', Validators.required],
-    Fecha_Tentativa: ['', Validators.required],
-    Descripcion_Servicio: ['', Validators.required],
-    Tipo_Servicio: ['', Validators.required],
-    Precio_Referencia: ['', Validators.required],
+  });
+
+  
+  LugaresMuestro = this.fb.group({    
     Lugar_Muestreo: ['', Validators.required],
     Coordenada_Longitud: ['', Validators.required],
     Coordenada_Latitud: ['', Validators.required],
     Nombre_Punto: ['', Validators.required]
   })
+
+  formServicio = this.fb.group({    
+    Fecha_Tentativa: ['', Validators.required],
+    Descripcion_Servicio: ['', Validators.required],
+    Tipo_Servicio: ['', Validators.required],
+    Precio_Referencia: ['', Validators.required],
+    Cliente: this.formCliente,
+    lugaresMuestreo: this.LugaresMuestro   
+  })
+
+
+  LeerLugares(){
+
+  }
 
 
   __insert(data: any) {
@@ -48,17 +62,21 @@ export class RegistroComponent implements OnInit {
   }
 
   __onSubmit() {
-    if (this.projectForm.valid) {
-        Swal.fire({
-        title: 'Registro',
-         text: '¡Se ha registrado!',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-       })
-      
-      this.__insert(this.projectForm.value);
+    console.log(this.formServicio.value);
+
+    
+
+    if (this.formCliente.valid) {
+      //   Swal.fire({
+      //   title: 'Registro',
+      //    text: '¡Se ha registrado!',
+      //   icon: 'success',
+      //   confirmButtonText: 'Ok'
+      //  })
+      //this.__insert(this.projectForm.value);
       
     } else {
+      
       alert("Formulario no válido");
     }
   }

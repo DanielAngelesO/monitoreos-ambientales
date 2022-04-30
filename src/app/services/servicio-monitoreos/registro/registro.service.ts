@@ -18,7 +18,7 @@ export class RegistroService {
   }
 
   __be_insert(data:any){
-    console.log(data);
+    //console.log(data);
     return data;
 
     
