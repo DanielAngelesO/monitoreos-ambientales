@@ -22,6 +22,10 @@ import { RegistroComponent } from './servicio-monitoreos/registro/registro.compo
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TableOrdenesServicioComponent } from './SharedComponents/table-ordenes-servicio/table-ordenes-servicio.component';
+import { InformacionProyectoComponent } from './SharedComponents/informacion-proyecto/informacion-proyecto.component';
+import { InformacionSolicitudComponent } from './SharedComponents/informacion-solicitud/informacion-solicitud.component';
+import { ConsultaSolicitudComponent } from './SharedComponents/consulta-solicitud/consulta-solicitud.component';
 
 
 @NgModule({
@@ -38,6 +42,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegistroComponent,
     GenerarPlanComponent,
     LoginComponent,
+    TableOrdenesServicioComponent,
+    InformacionProyectoComponent,
+    InformacionSolicitudComponent,
+    ConsultaSolicitudComponent,
     
   ],
   imports: [

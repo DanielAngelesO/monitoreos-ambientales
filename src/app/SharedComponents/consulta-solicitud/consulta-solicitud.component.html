@@ -1,0 +1,78 @@
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+      <li>
+        <i class="ace-icon fa fa-search"></i>
+        <a href="#"> &nbsp; Consulta Monitoreos</a>
+      </li>      
+    </ul>
+  </div>
+
+  <div class="page-content">
+    <div class="row">
+
+      <section class="col-sm-12"> 
+        <div class="tabbable">
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+              <a data-toggle="tab" href="#tabCodigo">
+                Busqueda
+              </a>
+            </li>
+            
+          </ul>
+
+          <div class="tab-content">
+            <div id="tabCodigo" class="tab-pane fade in active">
+              <div class="row">
+                <section class="col-sm-12">
+
+                
+                  <form class="form">
+                    <fieldset>
+                      <section class="col-sm-12">
+                        <div class="form-group">
+                          <label class="control-label" for="form-field-1"> Ingrese c&oacute;digo de Solicitud</label>
+                          <div class="">                      
+                            <input type="number" [(ngModel)]="CodigoSolicitud" name="CodigoSolicitud" id="form-field-1" placeholder="" class="col-sm-2" />
+                          </div>
+                        </div>
+
+                      </section>
+                    </fieldset>
+
+                    
+                      <footer class="form-actions">                        
+                        <div class="btn-group">
+                          <button (click)="__ConsultaSolicitud()" class="btn btn-success" type="button">
+                          <i class="ace-icon fa fa-search"></i>
+                          Buscar
+                        </button>
+                      
+                        <button class="btn btn-warning" type="button">
+                          <i class="ace-icon fa fa-eraser"></i>
+                          Limpiar
+                        </button>
+                        </div>    
+                        
+                        
+                      </footer>
+
+                    
+
+                   
+                  </form>                
+                </section>
+              </div>              
+            </div>
+          </div>
+        </div>
+
+      </section >
+
+      <app-informacion-solicitud></app-informacion-solicitud>
+
+      
+      
+
+    </div>
+  </div>

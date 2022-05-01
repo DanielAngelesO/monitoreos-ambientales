@@ -12,6 +12,10 @@ import { RegistroComponent } from './servicio-monitoreos/registro/registro.compo
 import { GenerarPlanComponent } from './plan-monitoreo/generar-plan/generar-plan.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './login/logout.component';
+import { TableOrdenesServicioComponent } from './SharedComponents/table-ordenes-servicio/table-ordenes-servicio.component';
+import { InformacionProyectoComponent } from './SharedComponents/informacion-proyecto/informacion-proyecto.component';
+import { InformacionSolicitudComponent } from './SharedComponents/informacion-solicitud/informacion-solicitud.component';
+import { ConsultaSolicitudComponent } from './SharedComponents/consulta-solicitud/consulta-solicitud.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -28,6 +32,11 @@ const routes: Routes = [
   {path: 'Plan-Monitoreo/Asignacion-Analista', component: AsignacionAnalistasComponent},  
   {path: 'Plan-Monitoreo/Generar-Plan', component: GenerarPlanComponent},
   {path: 'ServicioMonitereos/Registro', component: RegistroComponent},
+  {path: 'ConsultaSolicitud', component: ConsultaSolicitudComponent},
+  
+  {path: 'OrdenesServicio', component: TableOrdenesServicioComponent},
+  {path: 'InformacionProyecto', component: InformacionProyectoComponent },
+  {path: 'InformacionSolicitud', component: InformacionSolicitudComponent}
 ];
 
 @NgModule({
