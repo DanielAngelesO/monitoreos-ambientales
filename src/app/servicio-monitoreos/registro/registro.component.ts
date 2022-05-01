@@ -54,6 +54,9 @@ export class RegistroComponent implements OnInit {
 
   }
 
+  personas: any[] = [];
+
+  persona: any = {};
 
   __insert(data: any) {
     this.ps.__be_insert(data).subscribe((rest: any) => {
@@ -61,8 +64,31 @@ export class RegistroComponent implements OnInit {
     })
   }
 
+  guardar() {
+    this.personas.push(this.persona);
+    this.persona = {};
+
+    console.log(this.personas);
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
   __onSubmit() {
+    Swal.fire({
+      title: 'Registro',
+      text: '¡Se ha registrado!',
+      icon: 'success',
+      confirmButtonText: 'Ok'
+    }).then(() => {
+      this.refresh();
+    })
+    /* this.__insert(this.personas); */
+    this.__insert(this.formServicio.value);
+    this.__insert(this.personas);
     console.log(this.formServicio.value);
+    console.log(this.personas);
 
     
 
