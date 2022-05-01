@@ -22,12 +22,9 @@ export class TableOrdenesServicioComponent implements OnInit {
     private disparate: DisparadorDataService
   ) { }
 
-  // ListarServicios() {
-  //   this.ps.ConsultarServicios().subscribe((rest: any) => {
-  //     this.servicios = rest.data;
-  //     console.log(this.servicios);      
-  //   })    
-  // }
+  __VerProyecto(Codigo: any){
+    this.disparate.disparadorDetalleProyecto.emit(Codigo);
+  }
 
   ngOnInit(): void {
     //this.ListarServicios();

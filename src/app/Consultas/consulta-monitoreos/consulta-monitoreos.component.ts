@@ -27,6 +27,10 @@ export class ConsultaMonitoreosComponent implements OnInit {
       this.disparate.disparadorData.emit(this.CodigoServicio);    
   }
 
+  __ConsultaDetalleProyecto(){
+      this.disparate.disparadorDetalleProyecto.emit(1002);
+  }
+
   ngOnInit(): void {
   }
 

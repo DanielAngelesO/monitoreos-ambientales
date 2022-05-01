@@ -1,55 +1,203 @@
-<div id="" class="">
+<section id="" class="">
 
-    <div class="col-xs-12 col-sm-6">
+    <article class="col-xs-12 col-sm-6">
 
         <div class="space-12"></div>
 
-        <div class="profile-user-info profile-user-info-striped">
+        <div *ngIf="proyecto != null" class="profile-user-info profile-user-info-striped">
             <div class="profile-info-row">
-                <div class="profile-info-name"> Ruc Cliente </div>
+                <div class="profile-info-name"> RUC CLIENTE </div>
                 <div class="profile-info-value">
-                    <span class="editable" id="username">aosidja osidj aoisd </span>
+                    <span id="username">{{proyecto.ruc_Cliente}}</span>
                 </div>
             </div>
 
             <div class="profile-info-row">
-                <div class="profile-info-name"> Nombre Cliente </div>
+                <div class="profile-info-name"> CLIENTE </div>
 
-                <div class="profile-info-value">
-                    <i class="fa fa-user"></i> &nbsp;
-                    <span id="">Daso oaisdj oaisjd oaisd oausd oauibs doaiu d</span>                    
+                <div class="profile-info-value">                    
+                    <span id="">{{proyecto.razon_Social}}</span>                    
                 </div>
             </div>
 
             <div class="profile-info-row">
-                <div class="profile-info-name"> Age </div>
-
+                <div class="profile-info-name"><i class="fa fa-user"></i> &nbsp; CONTACTO</div>
                 <div class="profile-info-value">
-                    <span class="editable" id="age">38</span>
+                    <span id="age">{{proyecto.contacto}}</span>
                 </div>
             </div>
 
             <div class="profile-info-row">
-                <div class="profile-info-name"> Joined </div>
+                <div class="profile-info-name"> CORREO </div>
 
                 <div class="profile-info-value">
-                    <span class="editable" id="signup">2010/06/20</span>
+                    <span id="signup">{{proyecto.correo}}</span>
                 </div>
             </div>
 
             <div class="profile-info-row">
-                <div class="profile-info-name"> Last Online </div>
-
+                <div class="profile-info-name"> <i class="fa fa-phone"></i> &nbsp; TELEFONO </div>
                 <div class="profile-info-value">
-                    <span class="editable" id="login">3 hours ago</span>
+                    <span class="editable" id="">{{proyecto.telefono}}</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="space-20"></div>
+
+        <div class="widget-box transparent">
+            <div class="widget-header widget-header-small">
+                <h4 class="widget-title blue smaller">
+                    <i class="ace-icon fa fa-rss orange"></i>
+                    Recent Activities
+                </h4>
+
+                <div class="widget-toolbar action-buttons">
+                    <a href="#" data-action="reload">
+                        <i class="ace-icon fa fa-refresh blue"></i>
+                    </a>
+
+                    <a href="#" class="pink">
+                        <i class="ace-icon fa fa-trash-o"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main padding-8">
+                    <div id="profile-feed-1" class="profile-feed">
+                        <div class="profile-activity clearfix">
+                            <div>
+                                <img class="pull-left" alt="Alex Doe's avatar" src="assets/images/avatars/avatar5.png" />
+                                <a class="user" href="#"> Alex Doe </a>
+                                changed his profile photo.
+                                <a href="#">Take a look</a>
+
+                                <div class="time">
+                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                    an hour ago
+                                </div>
+                            </div>
+
+                            <div class="tools action-buttons">
+                                <a href="#" class="blue">
+                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                </a>
+
+                                <a href="#" class="red">
+                                    <i class="ace-icon fa fa-times bigger-125"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="profile-activity clearfix">
+                            <div>
+                                <img class="pull-left" alt="Susan Smith's avatar" src="assets/images/avatars/avatar1.png" />
+                                <a class="user" href="#"> Susan Smith </a>
+
+                                is now friends with Alex Doe.
+                                <div class="time">
+                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                    2 hours ago
+                                </div>
+                            </div>
+
+                            <div class="tools action-buttons">
+                                <a href="#" class="blue">
+                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                </a>
+
+                                <a href="#" class="red">
+                                    <i class="ace-icon fa fa-times bigger-125"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="profile-activity clearfix">
+                            <div>
+                                <i class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
+                                <a class="user" href="#"> Alex Doe </a>
+                                joined
+                                <a href="#">Country Music</a>
+
+                                group.
+                                <div class="time">
+                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                    5 hours ago
+                                </div>
+                            </div>
+
+                            <div class="tools action-buttons">
+                                <a href="#" class="blue">
+                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
+                                </a>
+
+                                <a href="#" class="red">
+                                    <i class="ace-icon fa fa-times bigger-125"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr hr2 hr-double"></div>
+
+        <div class="space-6"></div>
+
+        <div class="center">
+            <button type="button" class="btn btn-sm btn-primary btn-white btn-round">
+                <i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
+                <span class="bigger-110">View more activities</span>
+
+                <i class="icon-on-right ace-icon fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </article>
+
+    <article class="col-xs-12 col-sm-6">
+
+        <div class="space-12"></div>
+
+        <div *ngIf="proyecto != null" class="profile-user-info profile-user-info-striped">
+            <div class="profile-info-row">
+                <div class="profile-info-name"> SERVICIO </div>
+                <div class="profile-info-value">
+                    <span id="username">{{proyecto.codigo_Servicio}} {{proyecto.descripcion_Servicio}}</span>
                 </div>
             </div>
 
             <div class="profile-info-row">
-                <div class="profile-info-name"> About Me </div>
+                <div class="profile-info-name"> <i class="fa fa-calendar"></i> &nbsp; PLAZO </div>
+
+                <div class="profile-info-value">                    
+                    <span id="">{{proyecto.fecha_Inicio}} al {{proyecto.fecha_Fin}}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name"><i class="fa fa-money"></i> &nbsp; PRECIO</div>
+                <div class="profile-info-value">
+                    <span id="age"> S/ {{proyecto.precio_Final_Servicio}}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name"><i class="fa fa-money"></i> &nbsp; VI&Aacute;TICOS </div>
 
                 <div class="profile-info-value">
-                    <span class="editable" id="about">Editable as WYSIWYG</span>
+                    <span id="signup"> S/ {{proyecto.monto_Viaticos}}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name">  ESTADO </div>
+                <div class="profile-info-value">
+                    <span class="editable" id="">{{proyecto.estado_Solicitud}}</span>
                 </div>
             </div>
         </div>
@@ -167,5 +315,5 @@
                 <i class="icon-on-right ace-icon fa fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-</div>
+    </article>
+</section>

@@ -6,6 +6,7 @@ import {EventEmitter, Injectable, Output } from '@angular/core';
 })
 export class DisparadorDataService {
   @Output() disparadorData: EventEmitter<any> = new EventEmitter();
+  @Output() disparadorDetalleProyecto: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 }

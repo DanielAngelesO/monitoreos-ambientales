@@ -1,3 +1,4 @@
+
 <section class="col-sm-12">
     <div *ngIf="servicios != null"  class="row">
       <div class="col-xs-12">
@@ -25,9 +26,9 @@
             <tr *ngFor="let serv of servicios">
               <td class="center">
                 <div class="">
-                  <a class="green bigger-140" title="Show Details">
-                    <i class="ace-icon fa fa-angle-double-down"></i>                        
-                  </a>
+                  <button (click)="__VerProyecto(serv.codigo_Solicitud)" class="green" title="Ver Detalles">
+                    <i class="ace-icon fa fa-search"></i>                        
+                  </button>
                 </div>
               </td>
               <td class="center">{{serv.codigo_Solicitud}}</td>

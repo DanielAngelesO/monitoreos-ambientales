@@ -22,4 +22,10 @@ export class ConsultaMonitoreosService {
   ConsultarServiciosPorNombre(data: any){
     return this.http.get('https://localhost:44309/api/OrdenServicio/listarPorCliente?NombreCliente=' + data);
   }
+
+  ObtenerProyecto(data: any){
+    return this.http.get('https://localhost:44309/api/OrdenServicio/ObtenerProyecto?CodigoServicio=' + data);
+  }
+
+
 }
