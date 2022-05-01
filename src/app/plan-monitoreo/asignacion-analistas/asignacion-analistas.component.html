@@ -9,7 +9,7 @@
 
 <div class="page-content">
     <div class="row">
-        <form [formGroup]="projectForm">
+        <form>
             <section class="col-sm-12">
                 <div class="tabbable">
                     <ul class="nav nav-tabs" id="myTab">
@@ -34,30 +34,33 @@
                                                 <div class="form-group">
                                                     <label class="control-label"> Codigo de Proyecto </label>
                                                     <div class="">
-                                                        <input type="text" id="" placeholder="" class="col-sm-12" name="proyecto" [(ngModel)]="persona.proyecto" />
+                                                        <input type="number" id="" placeholder="" class="col-sm-12" name="Codigo_Solicitud" [(ngModel)]="persona.Codigo_Solicitud" required minlength="3">
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-success" (click)="__ConsultaSolicitud()" type="button">
+                                    <i class="ace-icon fa fa-registered"></i>
+                                    Buscar
+                                  </button>
+
+                                                        <button class="btn btn-warning" type="button">
+                                    <i class="ace-icon fa fa-eraser"></i>
+                                    Limpiar
+                                  </button>
                                                     </div>
                                                 </div>
                                             </section>
 
 
+
                                         </fieldset>
+                                        <app-informacion-solicitud></app-informacion-solicitud>
 
 
-                                        <footer class="form-actions">
-                                            <div class="btn-group">
-                                                <button class="btn btn-success" type="button">
-                            <i class="ace-icon fa fa-registered"></i>
-                            Buscar
-                          </button>
 
-                                                <button class="btn btn-warning" type="button">
-                            <i class="ace-icon fa fa-eraser"></i>
-                            Limpiar
-                          </button>
-                                            </div>
-
-
-                                        </footer>
 
 
 
@@ -79,13 +82,19 @@
                                             <div class="widget-main">
                                                 <div class="col-xs-15 col-sm-5">
 
-                                                    <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a State..." name="analistas" [(ngModel)]="persona.analistas">
-                                            <option value="">  </option>
-                                            <option value="Daniel Angeles">Daniel Angeles</option>
-                                            <option value="ADaniel ÑahuisL">Daniel Ñahuis</option>
-                                            <option value="Hassel Muñoz">Hassel Muñoz</option>
-                                            <option value="Juan Damian">Juan Damian</option>
-                                            <option value="Alexander Sabrera">Alexander Sabrera</option>
+                                                    <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a State..." name="Codigo_Analista" [(ngModel)]="persona.Codigo_Analista">
+                                            
+                                            <option value="IA01">Luis Suarez Romero</option>
+                                            <option value="IA02">Pedro Ruiz Solis</option>
+                                            <option value="IA03">Yago Tejera Olmo</option>
+                                            <option value="IA04">Felix Ropero-Dominguez</option>
+                                            <option value="IA05">Federico Ferrero Vigil</option>
+                                            <option value="IA06">Sabas Nacio Sabater Salom</option>
+                                            <option value="IA07">Poncio Valentín Guitart Escolano</option>
+                                            <option value="IA08">Tomás Pombo Silva</option>
+                                            <option value="IA09">Fortunato Perelló Pinto</option>
+                                            <option value="IA10">Marcos Cordero Borja</option>
+
                                             
                                         </select>
                                                 </div>
@@ -102,7 +111,7 @@
                                         <label class="col-sm-2 control-label " for="form-field-1"> Cargo </label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="cargo" [(ngModel)]="persona.cargo" />
+                                            <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="Cargo" [(ngModel)]="persona.Cargo" />
                                         </div>
                                     </div>
 
@@ -110,7 +119,7 @@
                                         <label class="col-sm-2 control-label " for="form-field-1"> Tarea asignada </label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="tarea" [(ngModel)]="persona.tarea" />
+                                            <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="Tarea_Asignada" [(ngModel)]="persona.Tarea_Asignada" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -124,94 +133,37 @@
                         <div class="tab-content">
                             <div>
                                 <div class="col-xs-12">
-                                    <table id="simple-table" class="table  table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="center">
-                                                    CODIGO DE SOLICITUD
-                                                </th>
+                                    <form action="" [formGroup]="projectForm">
 
-                                                <th>ANALISTA</th>
-                                                <th>CARGO</th>
-                                                <th>TAREA ASIGNADA</th>
+                                        <table id="simple-table" class="table  table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="center">CODIGO DE SOLICITUD</th>
+                                                    <th>COD. ANALISTA</th>
+                                                    <th>CARGO</th>
+                                                    <th>TAREA ASIGNADA</th>
+                                                </tr>
+                                            </thead>
 
+                                            <tbody>
+                                                <tr *ngFor="let persona of personas">
+                                                    <td>{{persona.Codigo_Solicitud}}</td>
+                                                    <td>{{persona.Codigo_Analista}}</td>
+                                                    <td>{{persona.Cargo}}</td>
+                                                    <td>{{persona.Tarea_Asignada}}</td>
 
+                                                </tr>
 
-
-                                                <th>REGISTRO</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr *ngFor="let persona of personas">
-                                                <td>{{persona.proyecto}}</td>
-                                                <td>{{persona.analistas}}</td>
-                                                <td>{{persona.cargo}}</td>
-                                                <td>{{persona.tarea}}</td>
-                                                <td>
-                                                    <div class="hidden-sm hidden-xs btn-group">
-                                                        <button class="btn btn-xs btn-success">
-                                                        <i class="ace-icon fa fa-check bigger-120"></i>
-                                                    </button>
-
-                                                        <button class="btn btn-xs btn-info">
-                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                    </button>
-
-                                                        <button class="btn btn-xs btn-danger">
-                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                    </button>
-
-                                                        <button class="btn btn-xs btn-warning">
-                                                        <i class="ace-icon  fa fa-search-plus bigger-130"></i>
-                                                    </button>
-                                                    </div>
-
-                                                    <div class="hidden-md hidden-lg">
-                                                        <div class="inline pos-rel">
-                                                            <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                            <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-                                                        </button>
-
-                                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                                <li>
-                                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                                        <span class="blue">
-                                                                        <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                                    </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li>
-                                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                                                        <span class="green">
-                                                                        <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                                                    </span>
-                                                                    </a>
-                                                                </li>
-
-                                                                <li>
-                                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                                                        <span class="red">
-                                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                                    </span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+                                    </form>
 
 
                                 </div>
                             </div>
                             <br>
                             <div class="text-center">
-                                <button class="btn btn-success btn-block" (click)="__onSubmit()">Asignar</button>
+                                <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Asignar</button>
                                 <button class="btn btn-danger btn-block">Cancelar</button>
                             </div>
                         </div>
