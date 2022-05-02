@@ -1,10 +1,9 @@
-<section id="" class="">
+<section *ngIf="proyecto != null" id="Cabecera" class="">
 
     <article class="col-xs-12 col-sm-6">
-
         <div class="space-12"></div>
 
-        <div *ngIf="proyecto != null" class="profile-user-info profile-user-info-striped">
+        <div id="InforCliente" class="profile-user-info profile-user-info-striped">
             <div class="profile-info-row">
                 <div class="profile-info-name"> RUC CLIENTE </div>
                 <div class="profile-info-value">
@@ -45,125 +44,12 @@
         </div>
 
         <div class="space-20"></div>
-
-        <div class="widget-box transparent">
-            <div class="widget-header widget-header-small">
-                <h4 class="widget-title blue smaller">
-                    <i class="ace-icon fa fa-rss orange"></i>
-                    Recent Activities
-                </h4>
-
-                <div class="widget-toolbar action-buttons">
-                    <a href="#" data-action="reload">
-                        <i class="ace-icon fa fa-refresh blue"></i>
-                    </a>
-
-                    <a href="#" class="pink">
-                        <i class="ace-icon fa fa-trash-o"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="widget-body">
-                <div class="widget-main padding-8">
-                    <div id="profile-feed-1" class="profile-feed">
-                        <div class="profile-activity clearfix">
-                            <div>
-                                <img class="pull-left" alt="Alex Doe's avatar" src="assets/images/avatars/avatar5.png" />
-                                <a class="user" href="#"> Alex Doe </a>
-                                changed his profile photo.
-                                <a href="#">Take a look</a>
-
-                                <div class="time">
-                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                    an hour ago
-                                </div>
-                            </div>
-
-                            <div class="tools action-buttons">
-                                <a href="#" class="blue">
-                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                </a>
-
-                                <a href="#" class="red">
-                                    <i class="ace-icon fa fa-times bigger-125"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="profile-activity clearfix">
-                            <div>
-                                <img class="pull-left" alt="Susan Smith's avatar" src="assets/images/avatars/avatar1.png" />
-                                <a class="user" href="#"> Susan Smith </a>
-
-                                is now friends with Alex Doe.
-                                <div class="time">
-                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                    2 hours ago
-                                </div>
-                            </div>
-
-                            <div class="tools action-buttons">
-                                <a href="#" class="blue">
-                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                </a>
-
-                                <a href="#" class="red">
-                                    <i class="ace-icon fa fa-times bigger-125"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="profile-activity clearfix">
-                            <div>
-                                <i class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
-                                <a class="user" href="#"> Alex Doe </a>
-                                joined
-                                <a href="#">Country Music</a>
-
-                                group.
-                                <div class="time">
-                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                    5 hours ago
-                                </div>
-                            </div>
-
-                            <div class="tools action-buttons">
-                                <a href="#" class="blue">
-                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                </a>
-
-                                <a href="#" class="red">
-                                    <i class="ace-icon fa fa-times bigger-125"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                  
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hr hr2 hr-double"></div>
-
-        <div class="space-6"></div>
-
-        <div class="center">
-            <button type="button" class="btn btn-sm btn-primary btn-white btn-round">
-                <i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
-                <span class="bigger-110">View more activities</span>
-
-                <i class="icon-on-right ace-icon fa fa-arrow-right"></i>
-            </button>
-        </div>
     </article>
 
     <article class="col-xs-12 col-sm-6">
-
         <div class="space-12"></div>
 
-        <div *ngIf="proyecto != null" class="profile-user-info profile-user-info-striped">
+        <div id="InfoServicio" class="profile-user-info profile-user-info-striped">
             <div class="profile-info-row">
                 <div class="profile-info-name"> SERVICIO </div>
                 <div class="profile-info-value">
@@ -203,117 +89,106 @@
         </div>
 
         <div class="space-20"></div>
+    </article>
+</section>
 
-        <div class="widget-box transparent">
+<section *ngIf="proyecto != null" id="Datalles" class="">
+    
+
+    <article class="col-xs-12 col-sm-4">
+        
+        <div id="LugaresMuestres" class="widget-box transparent">
             <div class="widget-header widget-header-small">
                 <h4 class="widget-title blue smaller">
-                    <i class="ace-icon fa fa-rss orange"></i>
-                    Recent Activities
+                    <i class="ace-icon fa fa-globe green"></i>
+                    Lugares muestreo
                 </h4>
-
-                <div class="widget-toolbar action-buttons">
-                    <a href="#" data-action="reload">
-                        <i class="ace-icon fa fa-refresh blue"></i>
-                    </a>
-
-                    <a href="#" class="pink">
-                        <i class="ace-icon fa fa-trash-o"></i>
-                    </a>
-                </div>
             </div>
 
             <div class="widget-body">
                 <div class="widget-main padding-8">
                     <div id="profile-feed-1" class="profile-feed">
+                        
                         <div class="profile-activity clearfix">
-                            <div>
-                                <img class="pull-left" alt="Alex Doe's avatar" src="assets/images/avatars/avatar5.png" />
-                                <a class="user" href="#"> Alex Doe </a>
-                                changed his profile photo.
-                                <a href="#">Take a look</a>
+                            <div> 
+                                <a class="user"> Tacna-Rios </a>  -                                 
+                                <a class="user"> Esquina Superior </a>
 
                                 <div class="time">
-                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                    an hour ago
+                                    <i class="ace-icon glyphicon glyphicon-map-marker bigger-110"></i>
+                                    Latitud: 17.12135, Longitud: 9.35454
                                 </div>
-                            </div>
-
-                            <div class="tools action-buttons">
-                                <a href="#" class="blue">
-                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                </a>
-
-                                <a href="#" class="red">
-                                    <i class="ace-icon fa fa-times bigger-125"></i>
-                                </a>
                             </div>
                         </div>
 
-                        <div class="profile-activity clearfix">
-                            <div>
-                                <img class="pull-left" alt="Susan Smith's avatar" src="assets/images/avatars/avatar1.png" />
-                                <a class="user" href="#"> Susan Smith </a>
-
-                                is now friends with Alex Doe.
-                                <div class="time">
-                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                    2 hours ago
-                                </div>
-                            </div>
-
-                            <div class="tools action-buttons">
-                                <a href="#" class="blue">
-                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                </a>
-
-                                <a href="#" class="red">
-                                    <i class="ace-icon fa fa-times bigger-125"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="profile-activity clearfix">
-                            <div>
-                                <i class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
-                                <a class="user" href="#"> Alex Doe </a>
-                                joined
-                                <a href="#">Country Music</a>
-
-                                group.
-                                <div class="time">
-                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                    5 hours ago
-                                </div>
-                            </div>
-
-                            <div class="tools action-buttons">
-                                <a href="#" class="blue">
-                                    <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                </a>
-
-                                <a href="#" class="red">
-                                    <i class="ace-icon fa fa-times bigger-125"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                  
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="hr hr2 hr-double"></div>
-
-        <div class="space-6"></div>
-
-        <div class="center">
-            <button type="button" class="btn btn-sm btn-primary btn-white btn-round">
-                <i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
-                <span class="bigger-110">View more activities</span>
-
-                <i class="icon-on-right ace-icon fa fa-arrow-right"></i>
-            </button>
-        </div>
     </article>
+
+    <article class="col-xs-12 col-sm-4">
+        <div id="Equipos" class="widget-box transparent">
+            <div class="widget-header widget-header-small">
+                <h4 class="widget-title blue smaller">
+                    <i class="ace-icon fa fa-briefcase green"></i>
+                    Equpos Utilizados
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main padding-8">
+                    <div id="profile-feed-1" class="profile-feed">
+                        
+                        <div *ngFor="let equipo of proyecto.equipos" class="profile-activity clearfix">
+                            <div>                                
+                                
+                                <a class="user" > {{equipo.codigo_Equipo}}	{{equipo.descripcion_Equipo}} </a> - {{equipo.estado}}
+                                <div class="time">
+                                    <i class="ace-icon glyphicon glyphicon-barcode"></i>
+                                    Marca: {{equipo.marca}}, Modelo: {{equipo.modelo}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr hr2 hr-double"></div>
+    </article>
+
+    <article class="col-xs-12 col-sm-4">
+        <div id="Analistas" class="widget-box transparent">
+            <div class="widget-header widget-header-small">
+                <h4 class="widget-title blue smaller">
+                    <i class="ace-icon fa fa-users green"></i>
+                    Analistas a cargo
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main padding-8">
+                    <div id="profile-feed-1" class="profile-feed">
+                        <div *ngFor="let analista of proyecto.analistas" class="profile-activity clearfix">
+                            <div>
+                                <img class="pull-left" alt="" src="assets/images/avatars/avatar2.png" />
+                                <a class="user" > {{analista.nombre_Analista}} </a>
+                                <div class="time">                                    
+                                    <a>{{analista.grado_Instruccion}}</a>, Especialidad: {{analista.especialidad}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr hr2 hr-double"></div>
+    </article>
+
+    
+
 </section>

@@ -25,3 +25,11 @@ function childrenRow() {
   cell5.innerHTML = ' <input type="text" name="age" class="form-control" />';
   cell6.innerHTML = '  <input type="button" class="btn btn-block btn-default" id="addrow" onclick="deleteRow(\''+id+'\')" value="Delete" /> '; 
 }
+
+function scroll(){
+  $('#profile-feed-1').ace_scroll({
+    height: '250px',
+    mouseWheelLock: true,
+    alwaysVisible : true
+  });
+}
