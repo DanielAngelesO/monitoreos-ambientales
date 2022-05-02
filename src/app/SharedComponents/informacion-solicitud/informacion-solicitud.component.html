@@ -1,0 +1,52 @@
+<section id="" class="">
+    <article class="col-xs-12 col-sm-6">
+        <div class="space-12"></div>
+        <div *ngIf="solicitud != null" class="profile-user-info profile-user-info-striped">
+            <div class="profile-info-row">
+                <div class="profile-info-name"> RUC CLIENTE </div>
+                <div class="profile-info-value">
+                    <span class="editable" id="username">{{solicitud[0].ruc_Cliente}}</span>
+                </div>
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> CLIENTE </div>
+                <div class="profile-info-value">                    
+                    <span id="">{{solicitud[0].razon_Social}}</span>                    
+                </div>
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> <i class="fa fa-user"></i> &nbsp; CONTACTO </div>
+                <div class="profile-info-value">
+                    <span id="">{{solicitud[0].contacto}}</span>
+                </div>
+            </div>            
+        </div>
+        <div class="space-20"></div>
+        <div class="space-6"></div>
+    </article>
+    <article class="col-xs-12 col-sm-6">
+        <div class="space-12"></div>
+        <div *ngIf="solicitud != null" class="profile-user-info profile-user-info-striped">
+            <div class="profile-info-row">
+                <div class="profile-info-name"> SERVICIO </div>
+                <div class="profile-info-value">
+                    <span class="editable" id="username">{{solicitud[0].descripcion_Servicio}}</span>
+                </div>
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> <i class="fa fa-calendar"></i> &nbsp; PLAZO </div>
+                <div class="profile-info-value">                    
+                    <span id="">{{solicitud[0].fecha_Inicio}} al {{solicitud[0].fecha_Fin}} </span>                    
+                </div>
+            </div>
+            <div class="profile-info-row">
+                <div class="profile-info-name"> <i class="fa fa-money"></i> &nbsp; PRECIO </div>
+                <div class="profile-info-value">
+                    <span id="">{{solicitud[0].precio_Final_Servicio}} Soles</span>
+                </div>
+            </div>            
+        </div>
+        <div class="space-20"></div>
+        <div class="space-6"></div>
+    </article>
+</section>

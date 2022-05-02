@@ -9,12 +9,11 @@
 
 <div class="page-content">
     <div class="row">
-        <form (ngSubmit)="__onSubmit()" [formGroup]="projectForm">
+        <!-- (ngSubmit)="__onSubmit()" -->
+        <div>
             <section class="col-sm-12">
                 <div class="tabbable">
                     <ul class="nav nav-tabs" id="myTab">
-
-
                         <li class="active">
                             <a data-toggle="tab" href="#tabEmpresa">
                             Cliente
@@ -26,11 +25,9 @@
                         <div id="tabCodigo" class="tab-pane fade in active">
                             <div class="row">
                                 <section class="col-sm-12">
-
-
-                                    <form class="form">
+                                    <form class="form" [formGroup]="formCliente">
                                         <fieldset>
-                                            <section class="col-sm-2">
+                                            <section class="col-sm-3">
                                                 <div class="form-group">
                                                     <label class="control-label"> RUC</label>
                                                     <div class="">
@@ -38,9 +35,7 @@
                                                     </div>
                                                 </div>
                                             </section>
-
-
-                                            <section class="col-sm-4">
+                                            <section class="col-sm-6">
                                                 <div class="form-group">
                                                     <label class="control-label"> Razon Social</label>
                                                     <div class="">
@@ -48,85 +43,59 @@
                                                     </div>
                                                 </div>
                                             </section>
+                                            <section class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label class="control-label "> Correo: </label>
 
+                                                    <div class="">
+                                                        <input type="email" id="" placeholder="Username@mail.com" class="col-sm-12" formControlName="Correo" />
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="col-sm-3">
+
+                                                <div class="form-group">
+                                                    <label class="control-label"> Teléfono:
+                                                </label>
+
+                                                    <div class="">
+                                                        <input type="text" id="" placeholder="+51999999999" class="col-sm-12" formControlName="Telefono" />
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label" for=""> Contacto: </label>
+
+                                                    <div class="">
+                                                        <input type="text" id="" placeholder="Pepito Perez" class="col-sm-12" formControlName="Contacto" />
+                                                    </div>
+                                                </div>
+                                            </section>
                                         </fieldset>
-
-
-
-
-
-
-
                                     </form>
                                 </section>
                             </div>
                         </div>
                         <br>
-
-                        <div class="row">
-                            <section class="col-sm-12">
-
-                                <form class="form">
-                                    <fieldset>
-                                        <section class="col-sm-3">
-                                            <div class="form-group">
-                                                <label class="control-label "> Correo: </label>
-
-                                                <div class="">
-                                                    <input type="email" id="" placeholder="Username@mail.com" class="col-sm-12" formControlName="Correo" />
-                                                </div>
-                                            </div>
-                                        </section>
-
-                                        <section class="col-sm-3">
-
-                                            <div class="form-group">
-                                                <label class="control-label"> Teléfono:
-                                            </label>
-
-                                                <div class="">
-                                                    <input type="number" id="" placeholder="+51999999999" class="col-sm-12" formControlName="Telefono" />
-                                                </div>
-                                            </div>
-                                        </section>
-
-                                        <section class="col-sm-3">
-                                            <div class="form-group">
-                                                <label class="control-label" for=""> Contacto: </label>
-
-                                                <div class="">
-                                                    <input type="text" id="" placeholder="Pepito Perez" class="col-sm-12" formControlName="Contacto" />
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </fieldset>
-
-
-
-                                </form>
-                            </section>
-                        </div>
                     </div>
-
                 </div>
                 <br>
 
 
                 <div class="tab-content">
-                    <h2 class="col-xs-6">Información del Servicio</h2>
+                    <h2 class="col-xs-12">Información del Servicio</h2>
                     <br>
                     <div class="row">
                         <section class="col-sm-12">
-
-
-                            <form class="form" role="form">
+                            <form class="form" role="form" [formGroup]="formServicio">
+                                <br>
                                 <fieldset>
-
                                     <section class="col-sm-3">
-
                                         <div class="form-group">
                                             <label class="control-label "> Fecha tentativa: </label>
-
                                             <div class="">
                                                 <input type="date" placeholder="Username@mail.com" class="col-sm-12" formControlName="Fecha_Tentativa" />
                                             </div>
@@ -134,10 +103,8 @@
                                     </section>
 
                                     <section class="col-sm-3">
-
                                         <div class="form-group">
                                             <label class="control-label "> Descripción del servicio </label>
-
                                             <div class="">
                                                 <input type="text" placeholder="Descripción del proyecto..." class="col-sm-12" formControlName="Descripcion_Servicio" />
                                             </div>
@@ -145,7 +112,6 @@
                                     </section>
 
                                     <section class="col-sm-3">
-
                                         <div class="form-group">
                                             <label class="control-label"> Tipo de servicio:
                                         </label>
@@ -165,7 +131,6 @@
                                     <section class="col-sm-3">
                                         <div class="form-group">
                                             <label class="control-label " for=""> Precio de referencia </label>
-
                                             <div class="">
                                                 <input type="number" id="" placeholder="100.0" class="col-sm-12 form-control" formControlName="Precio_Referencia" />
                                             </div>
@@ -173,66 +138,106 @@
                                     </section>
                                 </fieldset>
                             </form>
-
-
                         </section>
+                    </div>
+                </div>
+                <br>
 
+                <div class="tab-content">
+                    <h2 class="col-xs-12">Lugares de Muestreo</h2>
+                    <br>
+                    <div class="row">
+                        <section class="col-sm-12">
+                            <form class="form" role="form">
+                                <br>
+                                <fieldset>
+                                    <section class="col-sm-3">
+                                        <div class="form-group">
+                                            <label class="control-label "> Lugar de muestreo </label>
+                                            <div class="">
+                                                <input type="text" placeholder="Username@mail.com" class="col-sm-12" name="lugar_Muestreo" [(ngModel)]="persona.lugar_Muestreo" />
+                                            </div>
+                                        </div>
+                                    </section>
 
+                                    <section class="col-sm-3">
+                                        <div class="form-group">
+                                            <label class="control-label "> Coordenada Longitud </label>
+                                            <div class="">
+                                                <input type="text" placeholder="Descripción del proyecto..." class="col-sm-12" name="coordenada_Lontigitud" [(ngModel)]="persona.coordenada_Lontigitud" />
+                                            </div>
+                                        </div>
+                                    </section>
 
+                                    <section class="col-sm-3">
+                                        <div class="form-group">
+                                            <label class="control-label "> Coordenada Latitud </label>
+                                            <div class="">
+                                                <input type="text" placeholder="Descripción del proyecto..." class="col-sm-12" name="coordenada_Latitud" [(ngModel)]="persona.coordenada_Latitud" />
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="col-sm-3">
+                                        <div class="form-group">
+                                            <label class="control-label " for=""> Nombre del punto </label>
+                                            <div class="">
+                                                <input type="text" id="" placeholder="100.0" class="col-sm-12 form-control" name="nombre_Punto" [(ngModel)]="persona.nombre_Punto" />
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </section>
+                                    <div class="form-group">
+
+                                        <button class="btn btn-primary col-sm-2" style="margin-left: 10px" (click)="guardar()">Agregar</button>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </section>
                     </div>
                 </div>
                 <br>
                 <div class="tab-content">
-                    <h2 class="col-xs-6">Lugares de Muestreo</h2> <br>
-                    <div class="row">
+                    <div>
+                        <div class="col-xs-12">
+                            <form action="" [formGroup]="LugaresMuestro">
 
-                        <section class="col-sm-12">
+                                <table id="simple-table" class="table  table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="center">Lugar de muestreo</th>
+                                            <th>Longitud</th>
+                                            <th>Latitud</th>
+                                            <th>Nombre del punto</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr *ngFor="let persona of personas">
+                                            <td>{{persona.lugar_Muestreo}}</td>
+                                            <td>{{persona.coordenada_Lontigitud}}</td>
+                                            <td>{{persona.coordenada_Latitud}}</td>
+                                            <td>{{persona.nombre_Punto}}</td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </form>
 
 
-                            <table class="table table-bordered" id="childTable">
-                                <thead class="table-info">
-                                    <tr>
-                                        <th scope="col">No.</th>
-                                        <th scope="col">Lugar de muestreo</th>
-                                        <th scope="col">Coordenada Longitud </th>
-                                        <th scope="col">Coordenada Latitud</th>
-                                        <th scope="col">Nombre del punto</th>
-                                        <th scope=""></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td class="col-sm-4">
-                                            <input type="text" name="lugar" class="form-control" formControlName="Lugar_Muestreo" />
-                                        </td>
-                                        <td>
-                                            <input type="text" name="longitud" class="form-control" formControlName="Coordenada_Longitud" />
-                                        </td>
-                                        <td class="col-sm-2">
-                                            <input type="text" name="latitud" class="form-control" formControlName="Coordenada_Latitud" />
-                                        </td>
-                                        <td class="col-sm-2">
-                                            <input type="text" name="punto" class="form-control" formControlName="Nombre_Punto" />
-                                        </td>
-                                        <td>
-                                            <input type="button" class="btn btn-block btn-default" id="addrow" onclick="childrenRow()" value="+" />
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
+                        </div>
                     </div>
-
-                </div>
-                <br>
-                <div class="text-center">
-                    <button (click)="__onSubmit()" class="btn btn-success btn-block">Registrar</button>
-                    <button class="btn btn-danger btn-block">Cancelar</button>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Asignar</button>
+                        <button class="btn btn-danger btn-block">Cancelar</button>
+                    </div>
                 </div>
             </section>
 
-        </form>
+        </div>
 
     </div>
 </div>

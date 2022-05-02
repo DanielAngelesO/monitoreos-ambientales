@@ -5,14 +5,14 @@ import { ConsultaMonitoreosService } from 'src/app/services/consultas/consulta-m
 import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
 import { FormsModule } from '@angular/forms';
 
-@Component({
-  selector: 'app-consulta-monitoreos',
-  templateUrl: './consulta-monitoreos.component.html',
-  styleUrls: ['./consulta-monitoreos.component.css']
-})
-export class ConsultaMonitoreosComponent implements OnInit {
 
-  CodigoServicio = ''
+@Component({
+  selector: 'app-consulta-solicitud',
+  templateUrl: './consulta-solicitud.component.html',
+  styleUrls: ['./consulta-solicitud.component.css']
+})
+export class ConsultaSolicitudComponent implements OnInit {
+  CodigoSolicitud = ''
 
   constructor(
     private fb: FormBuilder,
@@ -23,12 +23,8 @@ export class ConsultaMonitoreosComponent implements OnInit {
     
   }
 
-  __ConsultaServicio() {      
-      this.disparate.disparadorData.emit(this.CodigoServicio);    
-  }
-
-  __ConsultaDetalleProyecto(){
-      this.disparate.disparadorDetalleProyecto.emit(1002);
+  __ConsultaSolicitud() {      
+      this.disparate.disparadorData.emit(this.CodigoSolicitud);    
   }
 
   ngOnInit(): void {

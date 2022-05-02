@@ -15,15 +15,10 @@
           <ul class="nav nav-tabs" id="myTab">
             <li class="active">
               <a data-toggle="tab" href="#tabCodigo">
-                Por c&oacute;digo
+                Busqueda
               </a>
             </li>
-
-            <li>
-              <a data-toggle="tab" href="#tabEmpresa">
-                Por Empresa
-              </a>
-            </li>            
+            
           </ul>
 
           <div class="tab-content">
@@ -36,26 +31,24 @@
                     <fieldset>
                       <section class="col-sm-12">
                         <div class="form-group">
-                          <label class="control-label" for="form-field-1"> Ingrese c&oacute;digo de Servicio</label>
+                          <label class="control-label" for="form-field-1"> Ingrese c&oacute;digo de Servicio o Nombre Cliente</label>
                           <div class="">                      
-                            <input type="text" id="form-field-1" placeholder="" class="col-sm-2" />
+                            <input type="text" [(ngModel)]="CodigoServicio" name="CodigoServicio" id="form-field-1" placeholder="" class="col-sm-2" />
                           </div>
                         </div>
 
                       </section>
-                      
-  
                     </fieldset>
 
                     
                       <footer class="form-actions">                        
                         <div class="btn-group">
-                          <button class="btn btn-success" type="button">
+                          <button (click)="__ConsultaServicio()" class="btn btn-success" type="button">
                           <i class="ace-icon fa fa-search"></i>
                           Buscar
                         </button>
                       
-                        <button class="btn btn-warning" type="button">
+                        <button (click)="__ConsultaDetalleProyecto()" class="btn btn-warning" type="button">
                           <i class="ace-icon fa fa-eraser"></i>
                           Limpiar
                         </button>
@@ -72,7 +65,7 @@
               </div>              
             </div>
 
-            <div id="tabEmpresa" class="tab-pane fade">
+            <!-- <div id="tabEmpresa" class="tab-pane fade">
               <div class="row">
                 <section class="col-sm-12">
                   <form class="form">
@@ -100,7 +93,7 @@
 
                     <footer class="form-actions">                        
                       <div class="btn-group">
-                        <button class="btn btn-success" type="button">
+                        <button (click)="__ConsultaServicio()" class="btn btn-success" type="button">
                         <i class="ace-icon fa fa-search"></i>
                         Buscar
                       </button>
@@ -118,92 +111,16 @@
                 </section>
               </div>  
               
-            </div>
+            </div> -->
 
           </div>
         </div>
 
       </section >
 
-      <section class="col-sm-12">
-        <div class="row">
-          <div class="col-xs-12">
-            <table id="simple-table" class="table  table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th class="detail-col">Details</th>
-                  <th>Código Servicio</th>                  
-                  <th>Nombre cliente</th>
-                  <th>Tipo servicio</th>
-                  <th>Precio Servicio</th>
-                  <th>
-                    <i class="ace-icon fa fa-user bigger-110"></i>
-                    Ejecutor del Plan
-                  </th>
-                  <th>
-                    Nro. Analistas                  
-                  </th>
-                  <th>
-                    Nro. Equipos
-                  </th>
-                  <th>
-                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                    Última Actualización
-                  </th>
-                  <th>Estado Monitoreo</th>
-                  <th>Fecha Inicio</th>
-                  <th>Fecha Estimado Fin</th>
-                </tr>
-              </thead>
+      <app-table-ordenes-servicio></app-table-ordenes-servicio>
 
-              <tbody>
-                <tr>
-                  <td class="center">
-                    <div class="">
-                      <a href="#" class="green bigger-140" title="Show Details">
-                        <i class="ace-icon fa fa-angle-double-down"></i>                        
-                      </a>
-                    </div>
-                  </td>
-                  <td class="center">S1000701</td>
-                  <td>EMPRESA MINERA ALTEK SAC</td>                  
-                  <td>Especial</td>
-                  <td class="center">S/ 87,000</td>
-                  <td>Andres Cáceres Dulanto</td>
-                  <td class="center">8</td>
-                  <td class="center">23</td>
-                  <td>05 Abr, 2022</td>
-                  <td><span class="label label-lg label-success">En Proceso</span></td>
-                  <td>19 Mar, 2022</td>
-                  <td>20 Abr, 2022</td>
-                </tr>
-                <tr>
-                  <td class="center">
-                    <div class="">
-                      <a href="#" class="green bigger-140" title="Show Details">
-                        <i class="ace-icon fa fa-angle-double-down"></i>                        
-                      </a>
-                    </div>
-                  </td>
-                  <td class="center">S1000240</td>
-                  <td>EMPRESA MINERA ALTEK SAC</td>                  
-                  <td>Básico</td>
-                  <td class="center">S/ 45,000</td>
-                  <td>Pedro Romero Suarez</td>
-                  <td class="center">4</td>
-                  <td class="center">17</td>
-                  <td>12 Feb, 2022</td>
-                  <td><span class="label label-lg label-danger">Detenido</span></td>
-                  <td>27 Ene, 2022</td>
-                  <td>28 Feb, 2022</td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div><!-- /.span -->
-        </div><!-- /.row -->
-
-      </section>
+      <app-informacion-proyecto></app-informacion-proyecto>
 
       
       

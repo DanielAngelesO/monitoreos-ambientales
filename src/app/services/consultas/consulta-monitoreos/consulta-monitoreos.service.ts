@@ -11,7 +11,21 @@ export class ConsultaMonitoreosService {
   ) { }
 
 
-  __getConsulta(){
-    return this.http.get('');
+  ConsultarServicios(){
+    return this.http.get('https://localhost:44309/api/OrdenServicio/listar');
   }
+
+  ConsultarServiciosPorCodigo(data: any){
+    return this.http.get('https://localhost:44309/api/OrdenServicio/listarPorCodigo?CodigoServicio=' + data);
+  }
+
+  ConsultarServiciosPorNombre(data: any){
+    return this.http.get('https://localhost:44309/api/OrdenServicio/listarPorCliente?NombreCliente=' + data);
+  }
+
+  ObtenerProyecto(data: any){
+    return this.http.get('https://localhost:44309/api/OrdenServicio/ObtenerProyecto?CodigoServicio=' + data);
+  }
+
+
 }
