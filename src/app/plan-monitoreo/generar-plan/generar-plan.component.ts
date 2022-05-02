@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GenerarPlanEstimacionesService } from 'src/app/services/plan-monitoreo/generar-plan-estimaciones/generar-plan-estimaciones.service';
+import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
+
 
 @Component({
   selector: 'app-generar-plan',
@@ -12,13 +14,15 @@ export class GenerarPlanComponent implements OnInit {
 
   proyecto: any = [];
   solicitud_plan: number = 0;
+  CodigoServicio = '';
 
   constructor(
     private fb: FormBuilder,
     private fb2: FormBuilder,
     private readonly pp: GenerarPlanEstimacionesService,
     private readonly pp2: GenerarPlanEstimacionesService,
-    private router_solicitud_equipos: Router
+    private router_solicitud_equipos: Router,
+    private disparate: DisparadorDataService
   ) { }
 
   C_Solicitud= this.fb.group({
@@ -87,6 +91,11 @@ export class GenerarPlanComponent implements OnInit {
       alert("Solicitud no valida")
     }
   }
+
+  __ConsultaServicio() {      
+    this.disparate.disparadorData.emit(this._obtenerSol());
+    this._obtenerProyecto(this._obtenerSol());    
+}
 
 
   _GuardarPlan(){

@@ -37,7 +37,7 @@
 
                                     <footer class="form-actions">
                                         <div class="btn-group">
-                                            <button (click)="_Busqueda()" class="btn btn-success" type="button">
+                                            <button (click)=" __ConsultaServicio()" class="btn btn-success" type="button">
                             <i class="ace-icon fa fa-registered"></i>
                             Buscar
                           </button>
@@ -55,22 +55,7 @@
                         </div>
                     </div>
                     <br>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Codigo Solicitud</th>
-                                <th scope="col">Cliente</th>
-                                <th scope="col">Descripcion Servicio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let e of proyecto">
-                                <td>{{e.codigo_Solicitud}}</td>
-                                <td>{{e.razon_Social}}</td>
-                                <td>{{e.descripcion_Servicio}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <app-informacion-solicitud></app-informacion-solicitud>
                     <br>
                     <div class="tab-content">
                         <div class="col-xs-6">
