@@ -6,10 +6,8 @@
         </li>
     </ul>
 </div>
-
 <div class="page-content">
     <div class="row">
-
         <section class="col-sm-12">
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
@@ -21,31 +19,25 @@
                 </a>
                     </li>
                 </ul>
-
                 <div class="tab-content">
                     <div id="tabCodigo" class="tab-pane fade in active">
                         <div class="row">
                             <section class="col-sm-12">
-
-
-                                <form class="form">
+                                <form class="form" [formGroup]="C_Solicitud">
                                     <fieldset>
                                         <section class="col-sm-2">
                                             <div class="form-group">
                                                 <label class="control-label"> Codigo de Solicitud </label>
-                                                <div class="">
-                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" formControlName="Solicitud" placeholder="Codigo" class="col-sm-12" />
                                                 </div>
                                             </div>
                                         </section>
-
-
                                     </fieldset>
-
 
                                     <footer class="form-actions">
                                         <div class="btn-group">
-                                            <button class="btn btn-success" type="button">
+                                            <button (click)="_Busqueda()" class="btn btn-success" type="button">
                             <i class="ace-icon fa fa-registered"></i>
                             Buscar
                           </button>
@@ -58,62 +50,74 @@
 
 
                                     </footer>
-
-
-
-
                                 </form>
                             </section>
                         </div>
                     </div>
-
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Codigo Solicitud</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Descripcion Servicio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let e of proyecto">
+                                <td>{{e.codigo_Solicitud}}</td>
+                                <td>{{e.razon_Social}}</td>
+                                <td>{{e.descripcion_Servicio}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <br>
                     <div class="tab-content">
                         <div class="col-xs-6">
-                            <form class="form-horizontal" role="form">
+                            <form [formGroup]="C_Plan"   class="form-horizontal" role="form">
         
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label " for="form-field-1"> Fecha de inicio: </label>
+                                    <label class="col-sm-2 control-label " > Fecha de inicio: </label>
         
                                     <div class="col-sm-10">
-                                        <input type="date" id="form-field-1" placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="fecha_Inicio" type="datetime-local"  placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
         
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Fecha de finalizacion: </label>
+                                    <label class="col-sm-2 control-label no-padding-right" > Fecha de finalizacion: </label>
         
                                     <div class="col-sm-10">
-                                        <input type="date" id="form-field-1" placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="fecha_Fin" type="datetime-local"  placeholder="dd/mm/aa" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Cantidad de dias: </label>
+                                    <label class="col-sm-2 control-label no-padding-right" > Cantidad de dias: </label>
         
                                     <div class="col-sm-10">
-                                        <input type="text" id="form-field-1" placeholder="1 - 365" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="dias_Monitoreo" type="number"  placeholder="1 - 365" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label " for="form-field-1"> Cantidad de analistas: </label>
+                                    <label class="col-sm-2 control-label " > Cantidad de analistas: </label>
         
                                     <div class="col-sm-10">
-                                        <input type="number" id="form-field-1" placeholder="1 - 5" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="cantidad_Analista" type="number"  placeholder="1 - 5" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Monto Viaticos: </label>
+                                    <label class="col-sm-2 control-label no-padding-right" > Monto Viaticos: </label>
         
                                     <div class="col-sm-10">
-                                        <input type="text" id="form-field-1" placeholder="Cantidad del monto" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="monto_Viaticos" type="number"  placeholder="Cantidad del monto" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Precio Final: </label>
+                                    <label class="col-sm-2 control-label no-padding-right" > Precio Final: </label>
         
                                     <div class="col-sm-10">
-                                        <input type="text" id="form-field-1" placeholder="Precio" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="precio_Final_Servicio" type="number" placeholder="Precio" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
                                 
@@ -121,7 +125,12 @@
                         </div>
                     </div>
                     <br>
-            <div class="text-center">
-                <button class="btn btn-success btn-block">Agregar</button>
+                    <div class="text-center">
+                <button (click)="_GuardarPlan()" class="btn btn-success btn-block">Agregar</button>
                 <button class="btn btn-danger btn-block">Cancelar</button>
+                    </div>
+                </div>
             </div>
+        </section>
+    </div>
+</div>

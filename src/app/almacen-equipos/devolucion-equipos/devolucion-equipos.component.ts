@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DevolucionEquiposService } from 'src/app/services/almacen-equipos/devolucion-equipos/devolucion-equipos.service';
 
 @Component({
   selector: 'app-devolucion-equipos',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevolucionEquiposComponent implements OnInit {
 
-  constructor() { }
+  equipos : any = [];
+
+  constructor( private readonly ps: DevolucionEquiposService) { }
+
+  _Obtener_Servicios(){
+    this.ps.__getDevolucion().subscribe((rest: any)=> {
+      this.equipos=rest;
+      console.log(this.equipos);
+    })
+  }
 
   ngOnInit(): void {
+    this._Obtener_Servicios();
   }
 
 }

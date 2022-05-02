@@ -12,6 +12,6 @@ export class DevolucionEquiposService {
 
 
   __getDevolucion(){
-    return this.http.get('');
+    return this.http.get('/api/control_monitoreo');
   }
 }
