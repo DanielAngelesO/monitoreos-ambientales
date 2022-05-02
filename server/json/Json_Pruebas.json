@@ -1,0 +1,156 @@
+{
+  
+    "servicio":[
+
+      {
+        "codigo_Solicitud": 0,
+        "fecha_Solicitud": "2022-04-29",
+        "fecha_Tentativa": "2022-04-29",
+        "usuario_Registro": "Daniel.Angeles",
+        "estado_Solicitud": "",
+        "cod_Servicio": "S002",
+        "cliente": {
+          "codigo_Cliente": 0,
+          "ruc_Cliente": "20324568701",
+          "razon_Social": "Empresa Prueba",
+          "correo": "empresa@prueba.com",
+          "telefeono": "6154854",
+          "contacto": "Pedro Araujo"
+        },
+        "lugaresMuestreo": [
+          {
+            "cod_Solicitud": 0,
+            "codigo_Muestreo": 0,
+            "lugar_Muestreo": "Tacna-Rios",
+            "coordenada_Lontigitud": "80.32153",
+            "coordenada_Latitud": "7.4566",
+            "nombre_Punto": "Esquina superior"
+          },
+          {
+            "cod_Solicitud": 0,
+            "codigo_Muestreo": 0,
+            "lugar_Muestreo": "Tacna-Lado",
+            "coordenada_Lontigitud": "77.266521",
+            "coordenada_Latitud": "11.32154",
+            "nombre_Punto": "Final del terreno"
+          },
+          {
+            "cod_Solicitud": 0,
+            "codigo_Muestreo": 0,
+            "lugar_Muestreo": "Tacna-tercer",
+            "coordenada_Lontigitud": "79.1235",
+            "coordenada_Latitud": "9.542136",
+            "nombre_Punto": "Centro sur este"
+          },
+          {
+            "cod_Solicitud": 0,
+            "codigo_Muestreo": 0,
+            "lugar_Muestreo": "Tacna-perferico",
+            "coordenada_Lontigitud": "78.45652132",
+            "coordenada_Latitud": "8.1565452",
+            "nombre_Punto": "Centro Norte"
+          }
+        ],
+        "fechaRegistro": "2022-04-29",
+        "fechaModifica": "2022-04-29"
+      },
+      {
+        "codigo_Solicitud": 1002,
+        "fecha_Inicio": "2022-04-29",
+        "fecha_Fin": "2022-05-25",
+        "dias_Monitoreo": 20,
+        "cantidad_Analista": 3,
+        "monto_Viaticos": 1800.0,
+        "precio_Final_Servicio": 15200
+      },
+      [
+        {
+        "codigo_Solicitud": 1002,
+        "codigo_Analista": "IA01",
+        "cargo": "Jefe",
+        "tarea_Asignada": "Guiar la Ruta"
+      },
+      {
+        "codigo_Solicitud": 1002,
+        "codigo_Analista": "IA04",
+        "cargo": "Topografo 1",
+        "tarea_Asignada": "Tomar medidas R"
+      },
+      {
+        "codigo_Solicitud": 1002,
+        "codigo_Analista": "IA07",
+        "cargo": "Topografo 2",
+        "tarea_Asignada": "Listar datos"
+      },
+      {
+        "codigo_Solicitud": 1002,
+        "codigo_Analista": "IA08",
+        "cargo": "logistica",
+        "tarea_Asignada": "Getionar"
+      }]
+  
+    ],
+    "equipos":
+      [
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "CR-LIM-03",
+          "cantidad": 1,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        },
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "LV-LIM-06",
+          "cantidad": 1,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        },
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "MP-LIM-01",
+          "cantidad": 1,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        },
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "MP-LIM-02",
+          "cantidad": 3,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        },
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "TB-LIM-01",
+          "cantidad": 1,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        },
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "TB-LIM-03",
+          "cantidad": 1,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        },
+        {
+          "codigo_Solicitud": 1002,
+          "equipo": "TR-LIM-05",
+          "cantidad": 2,
+          "matriz": "AGUA",
+          "fecha_Salida": "2022-04-29",
+          "fecha_Retorno": "2022-05-25"
+        }
+      ]
+  
+
+}
+
+
