@@ -5,7 +5,7 @@ document.getElementById(id).remove()
 }
 
 function childrenRow() {
-
+  console.log('prueba hola');
   var table = document.getElementById("childTable");
   // GET TOTAL NUMBER OF ROWS 
   var x =table.rows.length;
@@ -26,10 +26,12 @@ function childrenRow() {
   cell6.innerHTML = '  <input type="button" class="btn btn-block btn-default" id="addrow" onclick="deleteRow(\''+id+'\')" value="Delete" /> '; 
 }
 
-function scroll(){
+function GetScroll(){
+  console.log('scroll hola');
   $('#profile-feed-1').ace_scroll({
-    height: '250px',
+    height: '750px',
     mouseWheelLock: true,
     alwaysVisible : true
   });
+  console.log('scroll finnn');
 }

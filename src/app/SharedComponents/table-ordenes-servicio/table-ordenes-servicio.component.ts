@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ConsultaMonitoreosService } from 'src/app/services/consultas/consulta-monitoreos/consulta-monitoreos.service';
 import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
 
-
+declare var GetScroll: any;
 
 @Component({
   selector: 'app-table-ordenes-servicio',
@@ -24,6 +24,7 @@ export class TableOrdenesServicioComponent implements OnInit {
 
   __VerProyecto(Codigo: any){
     this.disparate.disparadorDetalleProyecto.emit(Codigo);
+    GetScroll();
   }
 
   ngOnInit(): void {

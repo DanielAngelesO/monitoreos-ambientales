@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { ConsultaMonitoreosService } from 'src/app/services/consultas/consulta-monitoreos/consulta-monitoreos.service';
 import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
 
@@ -15,10 +14,9 @@ export class InformacionProyectoComponent implements OnInit {
   constructor(
     private readonly ps: ConsultaMonitoreosService,
     private router: Router,
-    private disparate: DisparadorDataService,
-    private _cargarScripts: CargarScriptsService
+    private disparate: DisparadorDataService,    
   ) {
-    this._cargarScripts.Carga(["registro"])
+    //this._cargarScripts.Carga(["registro"])
    }
 
   ngOnInit(): void {
@@ -32,6 +30,7 @@ export class InformacionProyectoComponent implements OnInit {
 
       })
     })
+    
     
   }
 
