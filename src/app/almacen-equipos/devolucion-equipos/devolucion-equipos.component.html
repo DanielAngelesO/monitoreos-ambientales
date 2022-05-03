@@ -5,128 +5,130 @@
             <a href="#"> &nbsp; Estimacion</a>
         </li>
     </ul>
-  </div>
-  
-  <div class="page-content">
+</div>
+
+<div class="page-content">
     <div class="row">
-  
+
         <section class="col-sm-12">
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
-  
-  
+
+
                     <li class="active">
                         <a data-toggle="tab" href="#tabEmpresa">
                   Por Empresa
                 </a>
                     </li>
                 </ul>
-  
+
                 <div class="tab-content">
                     <div id="tabCodigo" class="tab-pane fade in active">
                         <div class="row">
                             <section class="col-sm-12">
-  
-  
-                                <form class="form">
+                                <form [formGroup]="C_Solicitud" class="form">
                                     <fieldset>
                                         <section class="col-sm-2">
                                             <div class="form-group">
                                                 <label class="control-label"> Codigo de Solicitud </label>
-                                                <div class="">
-                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" formControlName="Solicitud" placeholder="Solicitud" class="col-sm-12" />
                                                 </div>
                                             </div>
                                         </section>
-  
-  
+
+
                                     </fieldset>
-  
-  
                                     <footer class="form-actions">
                                         <div class="btn-group">
-                                            <button class="btn btn-success" type="button">
-                            <i class="ace-icon fa fa-registered"></i>
-                            Buscar
-                          </button>
-  
+                                            <button (click)=" __ConsultaServicio()" class="btn btn-success" type="button">
+                                    <i class="ace-icon fa fa-registered"></i>
+                                     Buscar
+                                    </button>
                                             <button class="btn btn-warning" type="button">
-                            <i class="ace-icon fa fa-eraser"></i>
-                            Limpiar
-                          </button>
+                                    <i class="ace-icon fa fa-eraser"></i>
+                                    Limpiar
+                                    </button>
                                         </div>
 
                                     </footer>
+
+                                    <app-informacion-solicitud></app-informacion-solicitud>
+
+
                                 </form>
                             </section>
                         </div>
                     </div>
-
-
-<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-    <ul class="breadcrumb">
-        <li>
-            <i class="ace-icon fa fa-desktop"></i>
-            <a href="#"> &nbsp; Devolución de equipos</a>
-        </li>
-    </ul>
-</div>
-
-<div class="page-content">
-    <main class="container">
-        <div class="recuadro shadow p-3 mb-5 bg-white rounded">
-            <div class="recuadro-centro">
-                <br>
-                <!-- EQUIPOS ASIGNADOS -->
-                <div>
-                    <div>
-                        <div class="tittle-analistas mt-n1 text-center">
-                            <h2>Equipos Asignados</h2>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <!-- TABLA -->
-                    <div class="scroll-test">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col">N° Solicitud</th>
-                                    <th scope="col">Equipo</th>
-                                    <th scope="col">Cantidad</th>
-                                    <th scope="col">Matriz</th>
-                                    <th scope="col">Fecha_Salida</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let e of equipos">
-                                    <th scope="row">
-                                        <div>
-                                            <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" style="position: static; margin-left: 0px" />
-                                        </div>
-                                    </th>
-                                    <td>{{e.codigo_Solicitud}}</td>
-                                    <td>{{e.equipo}}</td>
-                                    <td>{{e.cantidad}}</td>
-                                    <td>{{e.matriz}}</td>
-                                    <td>{{e.fecha_Salida}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-            </div>
-            <br>
-        </div>
 
-    </main>
-</div>
+                <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="ace-icon fa fa-desktop"></i>
+                            <a href="#"> &nbsp; Devolución de equipos</a>
+                        </li>
+                    </ul>
+                </div>
 
 
-<br>
-<div class="text-center">
-    <button class="btn btn-success btn-block">Agregar</button>
-    <button class="btn btn-danger btn-block">Cancelar</button>
-</div>
+
+                <div class="page-content">
+                    <main class="container">
+                        <div class="recuadro shadow p-3 mb-5 bg-white rounded">
+                            <div class="recuadro-centro">
+                                <!-- EQUIPOS ASIGNADOS -->
+                                <div>
+                                    <div>
+                                        <div class="tittle-analistas mt-n1 text-center">
+                                            <h2>Equipos Asignados</h2>
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                    <!-- TABLA -->
+                                    <div class="scroll-test">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Estado</th>
+                                                    <th scope="col">Equipo</th>
+                                                    <th scope="col">Descripcion</th>
+                                                    <th scope="col">Estado Equipo</th>
+                                                    <th scope="col">Ubicacion</th>
+                                                    <th scope="col">Fecha_Salida</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let e of equipos, let i=index">
+                                                    <th scope="row">
+
+                                                        <div>
+                                                            <input class="form-check-input" type="checkbox" (change)="_cambio($event)" [value]="i" [checked]="e.checked" id="checkboxNoLabel" style="position: static; margin-left: 0px" />
+                                                        </div>
+
+
+                                                    </th>
+                                                    <td>{{e.codigo_Equipo}}</td>
+                                                    <td>{{e.descripcion_Equipo}}</td>
+                                                    <td>{{e.estado}}</td>
+                                                    <td>{{e.ubicacion}}</td>
+                                                    <td>{{e.fecha_Salida}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                    </main>
+                </div>
+                <br>
+                <div class="text-center">
+                    <button (click)="_EjecutarDevolucion()" class="btn btn-success btn-block" type="button">Agregar</button>
+                    <button class="btn btn-danger btn-block">Cancelar</button>
+                </div>

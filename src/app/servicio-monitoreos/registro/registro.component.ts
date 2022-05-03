@@ -24,6 +24,10 @@ export class RegistroComponent implements OnInit {
     _CargaScripts.Carga(["registro"])
   }
 
+  personas: any[] = [];
+
+  persona: any = {};
+
   formCliente = this.fb.group({
     Ruc_Cliente: ['', Validators.required],
     Razon_Social: ['', Validators.required],
@@ -41,22 +45,22 @@ export class RegistroComponent implements OnInit {
   })
 
   formServicio = this.fb.group({    
+    Codigo_Servicio: ['', Validators.required],
     Fecha_Tentativa: ['', Validators.required],
     Descripcion_Servicio: ['', Validators.required],
     Tipo_Servicio: ['', Validators.required],
     Precio_Referencia: ['', Validators.required],
     Cliente: this.formCliente,
-    lugaresMuestreo: this.LugaresMuestro   
-  })
+    lugaresMuestreo: this.fb.array([])
+  });
 
+  
 
   LeerLugares(){
-
+    
   }
 
-  personas: any[] = [];
-
-  persona: any = {};
+  
 
   __insert(data: any) {
     this.ps.__be_insert(data).subscribe((rest: any) => {
@@ -75,23 +79,18 @@ export class RegistroComponent implements OnInit {
     window.location.reload();
   }
 
-  __onSubmit() {
-    Swal.fire({
-      title: 'Registro',
-      text: '¡Se ha registrado!',
-      icon: 'success',
-      confirmButtonText: 'Ok'
-    }).then(() => {
-      this.refresh();
+  patchValues(coordenada_Latitud: any, coordenada_Lontigitud: any, lugar_Muestreo: any, nombre_Punto: any){
+    return this.fb.group({
+      coordenada_Latitud: [coordenada_Latitud],
+      coordenada_Lontigitud: [coordenada_Lontigitud],
+      lugar_Muestreo: [lugar_Muestreo],
+      nombre_Punto: [nombre_Punto]
     })
-    /* this.__insert(this.personas); */
-    this.__insert(this.formServicio.value);
-    this.__insert(this.personas);
-    console.log(this.formServicio.value);
-    console.log(this.personas);
+  }
 
+
+  __onSubmit() {
     
-
     if (this.formCliente.valid) {
       //   Swal.fire({
       //   title: 'Registro',
@@ -100,7 +99,25 @@ export class RegistroComponent implements OnInit {
       //   confirmButtonText: 'Ok'
       //  })
       //this.__insert(this.projectForm.value);
+      Swal.fire({
+        title: 'Registro',
+        text: '¡Se ha registrado!',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      }).then(() => {
+        this.refresh();
+      })
+      const control = <FormArray>this.formServicio.get('lugaresMuestreo');
+      this.personas.forEach(x =>{
+        control.push(this.patchValues(x.coordenada_Latitud, x.coordenada_Lontigitud, x.lugar_Muestreo, x.nombre_Punto ));
+      });
+
       
+
+      this.__insert(this.formServicio.value);
+      /* this.__insert(this.personas); */
+      console.log(this.formServicio.value);
+      console.log(this.personas);
     } else {
       
       alert("Formulario no válido");
