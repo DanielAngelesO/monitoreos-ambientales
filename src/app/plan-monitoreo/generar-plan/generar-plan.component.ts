@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GenerarPlanEstimacionesService } from 'src/app/services/plan-monitoreo/generar-plan-estimaciones/generar-plan-estimaciones.service';
 import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -60,15 +61,26 @@ export class GenerarPlanComponent implements OnInit {
         )
       }
       else{
-        alert("Solicitud no valida")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Solicitud no valida',
+          footer: '<a href="">Por favor corregir</a>'
+        })
       }
       })
   }
   _insertarplan(data: any){
     this.pp2._insertarplan(data).subscribe((rest:any)=>{
         if(rest.issuccess){
-             alert("Plan generado con solicitud "+this.proyecto[0].codigo_Solicitud)
-             this.router_solicitud_equipos.navigate(['home'])
+          Swal.fire({
+            title: 'Registro',
+            text: "Plan generado con solicitud "+this.proyecto[0].codigo_Solicitud,
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          }).then(() => {
+            this.refresh();
+          })
         }
         else{
              alert(rest.errormessage)
@@ -88,7 +100,12 @@ export class GenerarPlanComponent implements OnInit {
 
     }
     else{
-      alert("Solicitud no valida")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Solicitud no valida',
+        footer: '<a href="">Por favor corregir</a>'
+      })
     }
   }
 
@@ -106,14 +123,27 @@ export class GenerarPlanComponent implements OnInit {
       this._insertarplan(this.C_Plan.value);
     }
   else{
-    alert("Plan no guardado")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Plan no guardado',
+      footer: '<a href="">Por favor corregir</a>'
+    })
   }
   }
   else{
-  alert("Elegir Solicitud")
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Elegir Solicitud',
+    footer: '<a href="">Por favor corregir</a>'
+  })
   }
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
   ngOnInit(): void {
 
   

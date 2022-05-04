@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ignoreElements } from 'rxjs';
 import { DevolucionEquiposService } from 'src/app/services/almacen-equipos/devolucion-equipos/devolucion-equipos.service';
 import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-devolucion-equipos',
@@ -53,8 +54,14 @@ _EjecutarDevolucion()
         console.log(this.equipos2)
         this.ps._devolucionequipos(this.equipos2).subscribe((rest:any)=>{
           if(rest.issuccess){
-               alert("Equipos Devueltos")
-               this.router_devolucion.navigate(['home'])
+            Swal.fire({
+              title: 'Registro',
+              text: '¡Equipos devuelto!',
+              icon: 'success',
+              confirmButtonText: 'Ok'
+            }).then(() => {
+              this.refresh();
+            })
           }
           else{
                alert(rest.errormessage);
@@ -64,11 +71,21 @@ _EjecutarDevolucion()
       }  
     }
   else{
-    alert("Equipo no devuelto")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Equipo no devuelto',
+      footer: '<a href="">Por favor corregir</a>'
+    })
   }
   }
   else{
-  alert("Elegir Solicitud")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Elegir Solicitud',
+      footer: '<a href="">Por favor corregir</a>'
+    })
   }
 }
 
@@ -82,7 +99,12 @@ _EjecutarDevolucion()
 
       }
       else{
-        alert("Solicitud no valida")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Solicitud no valida',
+          footer: '<a href="">Por favor corregir</a>'
+        })
       }
       })
   }
@@ -110,6 +132,10 @@ _EjecutarDevolucion()
     const ischecked= $event.target.checked;
     this.equipos[id].checked=ischecked
     
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
   ngOnInit(): void {
 

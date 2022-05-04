@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ignoreElements } from 'rxjs';
 import { InformesService } from 'src/app/services/servicio-monitoreos/informes/informes.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-informes',
@@ -65,7 +66,12 @@ _obtenerlugares(sol: number){
       console.log(this.lugares)
     }
     else{
-      alert("Solicitud no valida")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Solicitud no valida',
+        footer: '<a href="">Por favor corregir</a>'
+      })
     }
     })
 
@@ -75,7 +81,12 @@ _obtenerlugares(sol: number){
         console.log(this.lugaresparametros)
       }
       else{
-        alert("No hay parametros aun")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No hay parametros aun',
+          footer: '<a href="">Por favor corregir</a>'
+        })
       }
       })
 }
@@ -118,8 +129,14 @@ _EjecutarDevolucion()
           console.log(this.parametro_nuevo)
           this.ps._insertarnuevoparametro(this.parametro_nuevo).subscribe((rest:any)=>{
             if(rest.issuccess){
-                 alert("Nuevo Parametro")
-                 this.router_devolucion.navigate(['home'])
+              Swal.fire({
+                title: 'Registro',
+                text: 'Nuevo Parametro',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              }).then(() => {
+                this.refresh();
+              })
             }
             else{
                  alert(rest.errormessage);
@@ -127,18 +144,38 @@ _EjecutarDevolucion()
           })  
       }
     else{
-      alert("Equipo no devuelto")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Equipo no devuelto',
+        footer: '<a href="">Por favor corregir</a>'
+      })
+      
     }
     }
     else{
-    alert("Elegir Solicitud")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Elegir Solicitud',
+      footer: '<a href="">Por favor corregir</a>'
+    })
     }
 
   }
   else{
-    alert('No hay parametro nuevo')
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'No hay parametro nuevo',
+      footer: '<a href="">Por favor corregir</a>'
+    })
   }
 
+}
+
+refresh(): void {
+  window.location.reload();
 }
 
   ngOnInit(): void {
