@@ -45,11 +45,22 @@ export class InformesComponent implements OnInit {
     return this.CodigoServicio
 }
 
-__ConsultaServicio() {      
-
-  console.log(this._obtenerSol())
-  this.disparate.disparadorData.emit(this._obtenerSol());
-  this._obtenerlugares(parseInt(this.CodigoServicio,10));
+__ConsultaServicio() {  
+  
+  this._obtenerSol();
+  console.log(this.CodigoServicio)    
+  if(this.CodigoServicio != undefined && this.CodigoServicio != ''){
+    //console.log(this._obtenerSol())
+    this.disparate.disparadorData.emit(this.CodigoServicio);
+    this._obtenerlugares(parseInt(this.CodigoServicio,10));
+  }else{
+    Swal.fire({
+      icon: 'warning',
+      title: 'Atención!',
+      text: 'Favor ingresar una solicitud...'
+    })
+  }
+  
 
   
   
@@ -62,15 +73,14 @@ _obtenerlugares(sol: number){
       this.lugares=rest.data;
       this.lugares.map((re: { checked: boolean; }) => {
         re.checked = false;
- })
+    })
       console.log(this.lugares)
     }
     else{
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Solicitud no valida',
-        footer: '<a href="">Por favor corregir</a>'
+        icon: 'warning',
+        title: 'Atención!',
+        text: 'Solicitud no valida, favor verificar...'
       })
     }
     })
@@ -82,10 +92,12 @@ _obtenerlugares(sol: number){
       }
       else{
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'No hay parametros aun',
-          footer: '<a href="">Por favor corregir</a>'
+          position: 'top-end',
+          icon: 'info',
+          title: 'Información!',
+          text: 'No tiene parametros registrados aún...',
+          showConfirmButton: false,
+          timer: 3500
         })
       }
       })
@@ -130,8 +142,8 @@ _EjecutarDevolucion()
           this.ps._insertarnuevoparametro(this.parametro_nuevo).subscribe((rest:any)=>{
             if(rest.issuccess){
               Swal.fire({
-                title: 'Registro',
-                text: 'Nuevo Parametro',
+                title: '¡Operación exitosa!',
+                text: 'Nuevo parámetro registrado correctamente...',
                 icon: 'success',
                 confirmButtonText: 'Ok'
               }).then(() => {
@@ -145,30 +157,27 @@ _EjecutarDevolucion()
       }
     else{
       Swal.fire({
-        icon: 'error',
+        icon: 'warning',
         title: 'Oops...',
-        text: 'Equipo no devuelto',
-        footer: '<a href="">Por favor corregir</a>'
+        text: 'Debe registrar todos los datos requeridos'        
       })
       
     }
     }
     else{
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Elegir Solicitud',
-      footer: '<a href="">Por favor corregir</a>'
-    })
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Debe ingresar una solicitud válida'        
+      })
     }
 
   }
   else{
     Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'No hay parametro nuevo',
-      footer: '<a href="">Por favor corregir</a>'
+      icon: 'warning',
+      title: 'Atención!',
+      text: 'Seleccione un lugar de muestreo y registre sus parámetros...'
     })
   }
 

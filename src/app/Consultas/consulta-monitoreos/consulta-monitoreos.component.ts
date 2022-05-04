@@ -30,6 +30,7 @@ export class ConsultaMonitoreosComponent implements OnInit {
 
   __ConsultaServicio() {      
       this.disparate.disparadorData.emit(this.CodigoServicio);    
+      
   }
 
   __Prueba(){

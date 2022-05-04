@@ -2,7 +2,7 @@
   <ul class="breadcrumb">
       <li>
           <i class="ace-icon fa fa-registered"></i>
-          <a href="#"> &nbsp; Estimacion</a>
+          <a href="#"> &nbsp; Aprobaci&oacute;n De solicitud</a>
       </li>
   </ul>
 </div>
@@ -16,9 +16,9 @@
 
 
                   <li class="active">
-                      <a data-toggle="tab" href="#tabEmpresa">
-                Por Empresa
-              </a>
+                      <a data-toggle="tab" href="#tabEmpresa"> 
+                        B&uacute;queda
+                      </a>
                   </li>
               </ul>
 
@@ -26,99 +26,178 @@
                   <div id="tabCodigo" class="tab-pane fade in active">
                       <div class="row">
                           <section class="col-sm-12">
-
-
                               <form class="form">
                                   <fieldset>
                                       <section class="col-sm-2">
                                           <div class="form-group">
                                               <label class="control-label"> Codigo de Solicitud </label>
                                               <div class="">
-                                                  <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                  <input [(ngModel)]="CodigoServicio" name="CodigoServicio" type="text" id="" placeholder="" class="col-sm-12" />
                                               </div>
                                           </div>
                                       </section>
-
-
                                   </fieldset>
-
-
                                   <footer class="form-actions">
                                       <div class="btn-group">
-                                          <button class="btn btn-success" type="button">
-                          <i class="ace-icon fa fa-registered"></i>
-                          Buscar
-                        </button>
-
-                                          <button class="btn btn-warning" type="button">
-                          <i class="ace-icon fa fa-eraser"></i>
-                          Limpiar
-                        </button>
+                                          <button (click)="__ConsultaServicio()" class="btn btn-success" type="button">
+                                            <i class="ace-icon fa fa-search"></i>
+                                            Buscar
+                                          </button>
                                       </div>
-
-
                                   </footer>
-
-
-
-
                               </form>
                           </section>
                       </div>
                   </div>
+              </div>
+          </div>
 
 
+      </section>
 
-<div class="page-content">
-    <div class="row">
-        <div class="col-12" style="text-align: center;">
-            <h3>APROBACION DE SOLICITUD</h3>
+      <section *ngIf="proyecto != null" id="Cabecera" class="">
+
+        <article class="col-xs-12 col-sm-6">
+            <div class="space-12"></div>
+    
+            <div id="InforCliente" class="profile-user-info profile-user-info-striped">
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> RUC CLIENTE </div>
+                    <div class="profile-info-value">
+                        <span id="username">{{proyecto.ruc_Cliente}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> CLIENTE </div>
+    
+                    <div class="profile-info-value">                    
+                        <span id="">{{proyecto.razon_Social}}</span>                    
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"><i class="fa fa-user"></i> &nbsp; CONTACTO</div>
+                    <div class="profile-info-value">
+                        <span id="age">{{proyecto.contacto}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> CORREO </div>
+    
+                    <div class="profile-info-value">
+                        <span id="signup">{{proyecto.correo}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> <i class="fa fa-phone"></i> &nbsp; TELEFONO </div>
+                    <div class="profile-info-value">
+                        <span class="editable" id="">{{proyecto.telefono}}</span>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="space-20"></div>
+        </article>
+    
+        <article class="col-xs-12 col-sm-6">
+            <div class="space-12"></div>
+    
+            <div id="InfoServicio" class="profile-user-info profile-user-info-striped">
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> SERVICIO </div>
+                    <div class="profile-info-value">
+                        <span id="username">{{proyecto.codigo_Servicio}} {{proyecto.descripcion_Servicio}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> <i class="fa fa-calendar"></i> &nbsp; PLAZO </div>
+    
+                    <div class="profile-info-value">                    
+                        <span id="">{{proyecto.fecha_Inicio}} al {{proyecto.fecha_Fin}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"><i class="fa fa-money"></i> &nbsp; PRECIO</div>
+                    <div class="profile-info-value">
+                        <span id="age"> S/ {{proyecto.precio_Final_Servicio}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"><i class="fa fa-money"></i> &nbsp; VI&Aacute;TICOS </div>
+    
+                    <div class="profile-info-value">
+                        <span id="signup"> S/ {{proyecto.monto_Viaticos}}</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name">  ESTADO </div>
+                    <div class="profile-info-value">
+                        <span class="editable" id="">{{proyecto.estado_Solicitud}}</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="space-20"></div>
+        </article>
+    </section>
+    
+    <section *ngIf="proyecto != null" id="Datalles" class="">
+        <article class="col-xs-12 col-sm-12">
+            <div id="Equipos" class="widget-box transparent">
+                <div class="widget-header widget-header-small">
+                    <h4 class="widget-title blue smaller">
+                        <i class="ace-icon fa fa-briefcase green"></i>
+                        Equipos Solicitados
+                    </h4>
+                </div>
+    
+                <div class="widget-body">
+                    <div class="widget-main padding-8">
+                        <div id="profile-feed-2" class="profile-feed listProject">
+                            
+                            <div *ngFor="let equipo of proyecto.equipos" class="profile-activity clearfix">
+                                <div>                                
+                                    
+                                    <a class="user" > {{equipo.codigo_Equipo}}	{{equipo.descripcion_Equipo}} </a> - {{equipo.estado}}
+                                    <div class="time">
+                                        <i class="ace-icon glyphicon glyphicon-barcode"></i>
+                                        Marca: {{equipo.marca}}, Modelo: {{equipo.modelo}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="hr hr2 hr-double"></div>
+        </article>
+
+        <br>
+        <div class="text-center">
+            <button class="btn btn-success btn-block">Aprobar</button>
+            <button class="btn btn-danger btn-block">Rechazar</button>
         </div>
-    </div>
-    <div class="row">
-      <div class="col"><h4>DATOS DEL CLIENTE</h4></div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4"><h5>EMPRESA</h5></div>
-      <div class="col-lg-8"><h5>ALS LS PERU SAC</h5></div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4"><h5>RUC</h5></div>
-      <div class="col-lg-8"><h5>20504979092</h5></div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4"><h5>E-mail</h5></div>
-      <div class="col-lg-8"><h5>Daniel_Nahuis@als.com.pe</h5></div>
-    </div>
-    <div class="row">
-      <div class="col"><h4>EQUIPOS</h4></div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4"><h6>Hivol</h6></div>
-      <div class="col-lg-4"><h6>Estacion Metereologica</h6></div>
-      <div class="col-lg-4"><h6>Analizador Automatico</h6></div>
-      <div class="col-lg-4"><h6>Generador Electrico</h6></div>
-      <div class="col-lg-4"><h6>Lowvol</h6></div>
-      <div class="col-lg-4"><h6>Tren de Muestreo</h6></div>
-      <div class="col-lg-4"><h6>Multiparametro</h6></div>
-      <div class="col-lg-4"><h6>Colorimetro</h6></div>
-      <div class="col-lg-4"><h6>Turbidimetro</h6></div>
-      <div class="col-lg-4"><h6>Correntometro</h6></div>
-      <div class="col-lg-4"><h6>Sonda de Interface</h6></div>
-      <div class="col-lg-4"><h6>Sonometro</h6></div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4"></div>
-      <div class="col-lg-4" style="padding-top:30px;"><a class="btn btn-primary" href="#" role="button">Aprobar</a></div>
-      <div class="col-lg-4" style="padding-top:30px;"><a class="btn btn-danger" href="#" role="button">Rechazar</a></div>
-      <div class="col-lg-4"></div>
-    </div>
+    
+
+    
+        
+    </section>
+    
+    <section>
+     
+
+    </section>
+    
   </div>
+</div>
 
 
-
-  <br>
-  <div class="text-center">
-      <button class="btn btn-success btn-block">Agregar</button>
-      <button class="btn btn-danger btn-block">Cancelar</button>
-  </div>

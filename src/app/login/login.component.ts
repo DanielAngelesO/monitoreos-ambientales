@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { subscribeOn } from 'rxjs';
 import { LoginService } from '../services/login/login.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -30,10 +30,16 @@ export class LoginComponent implements OnInit {
       this.ls.__be_login(data).subscribe((rest:any) => {
         console.log(rest);
         if(rest.issuccess){          
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Bienvenido!',
+            showConfirmButton: false,
+            timer: 1500
+          })
           sessionStorage.setItem('token', rest.data.token);
           sessionStorage.setItem('user', rest.data.usuario);
-          sessionStorage.setItem('profile', rest.data.perfil);
-          /* console.log("Usuario correcto"); */
+          sessionStorage.setItem('profile', rest.data.perfil);          
           
           this.router.navigateByUrl('/home', { skipLocationChange: false }).then(() => {
             this.router.navigate(['home'])
@@ -42,7 +48,14 @@ export class LoginComponent implements OnInit {
           
           
         }else {          
-          alert("Usuario inválido");
+          Swal.fire({
+            title: 'Atención',
+            text: 'Usuario o contraseña inválidos',
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+          }).then(() => {
+            //this.refresh();
+          })          
         }
       });
     }

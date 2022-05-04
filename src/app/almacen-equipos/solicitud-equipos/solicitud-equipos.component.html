@@ -2,7 +2,7 @@
     <ul class="breadcrumb">
         <li>
             <i class="ace-icon fa fa-registered"></i>
-            <a href="#"> &nbsp; Asignacion de especialista</a>
+            <a href="#"> &nbsp; Solicitud de Equipos</a>
         </li>
     </ul>
 </div>
@@ -17,8 +17,8 @@
 
                         <li class="active">
                             <a data-toggle="tab" href="#tabEmpresa">
-                  Por Empresa
-                </a>
+                            Búsqueda
+                            </a>
                         </li>
                     </ul>
 
@@ -42,14 +42,14 @@
                                                 <div>
                                                     <div class="btn-group">
                                                         <button class="btn btn-success" (click)="__ConsultaSolicitud()" type="button">
-                                    <i class="ace-icon fa fa-registered"></i>
-                                    Buscar
-                                  </button>
+                                                        <i class="ace-icon fa fa-registered"></i>
+                                                        Buscar
+                                                    </button>
 
-                                                        <button class="btn btn-warning" type="button">
-                                    <i class="ace-icon fa fa-eraser"></i>
-                                    Limpiar
-                                  </button>
+                                                        <button (click)="refresh()" class="btn btn-warning" type="button">
+                                                            <i class="ace-icon fa fa-eraser"></i>
+                                                            Limpiar
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </section>
@@ -76,38 +76,7 @@
 
                                 <div class="col-sm-12">
                                     <form class="form" role="form">
-
-                                        <!-- <div class="form-group">
-                                            <label class="col-sm-2 control-label " for="form-field-1"> Analistas </label>
-    
-                                            <div class="widget-body">
-                                                <div class="widget-main">
-                                                    <div class="col-xs-15 col-sm-5">
-    
-                                                        <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a State..." name="Codigo_Analista" [(ngModel)]="persona.Codigo_Analista">
-                                                
-                                                <option value="IA01">Luis Suarez Romero</option>
-                                                <option value="IA02">Pedro Ruiz Solis</option>
-                                                <option value="IA03">Yago Tejera Olmo</option>
-                                                <option value="IA04">Felix Ropero-Dominguez</option>
-                                                <option value="IA05">Federico Ferrero Vigil</option>
-                                                <option value="IA06">Sabas Nacio Sabater Salom</option>
-                                                <option value="IA07">Poncio Valentín Guitart Escolano</option>
-                                                <option value="IA08">Tomás Pombo Silva</option>
-                                                <option value="IA09">Fortunato Perelló Pinto</option>
-                                                <option value="IA10">Marcos Cordero Borja</option>
-    
-                                                
-                                            </select>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-    
-    
-    
-                                        </div> -->
-
+                                        
                                         <section class="col-sm-3">
 
                                             <div class="form-group">
@@ -168,7 +137,7 @@
                                             <label class="control-label" for=""></label>
                                             <div class="form-group">
 
-                                                <button class="btn btn-primary col-sm-10" (click)="guardar()">Agregar</button>
+                                                <button class="btn btn-primary col-sm-10" (click)="Agregar()">Agregar</button>
                                             </div>
                                         </section>
                                     </form>
@@ -213,7 +182,7 @@
                             </div>
                             <br>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Asignar</button>
+                                <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Ingresar Solicitud</button>
                                 <button class="btn btn-danger btn-block">Cancelar</button>
                             </div>
                         </div>

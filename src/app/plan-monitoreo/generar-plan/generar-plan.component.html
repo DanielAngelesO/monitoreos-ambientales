@@ -2,7 +2,7 @@
     <ul class="breadcrumb">
         <li>
             <i class="ace-icon fa fa-registered"></i>
-            <a href="#"> &nbsp; Estimacion</a>
+            <a href="#"> &nbsp; Generar Datos de Plan del Proyecto</a>
         </li>
     </ul>
 </div>
@@ -38,7 +38,7 @@
                                     <footer class="form-actions">
                                         <div class="btn-group">
                                             <button (click)=" __ConsultaServicio()" class="btn btn-success" type="button">
-                            <i class="ace-icon fa fa-registered"></i>
+                            <i class="ace-icon fa fa-search"></i>
                             Buscar
                           </button>
 
@@ -81,7 +81,7 @@
                                     <label class="col-sm-2 control-label no-padding-right" > Cantidad de dias: </label>
         
                                     <div class="col-sm-10">
-                                        <input class="form-control" formControlName="dias_Monitoreo" type="number"  placeholder="1 - 365" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="dias_Monitoreo" type="number"  placeholder="" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -111,8 +111,8 @@
                     </div>
                     <br>
                     <div class="text-center">
-                <button (click)="_GuardarPlan()" class="btn btn-success btn-block">Agregar</button>
-                <button class="btn btn-danger btn-block">Cancelar</button>
+                        <button (click)="_GuardarPlan()" class="btn btn-success btn-block">Generar</button>
+                
                     </div>
                 </div>
             </div>

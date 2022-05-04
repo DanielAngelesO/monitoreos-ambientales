@@ -19,12 +19,9 @@ export class SolicitudEquiposComponent implements OnInit {
 
   }
 
-
+  CodigoSolicitudBuscado = 0;
   personas: any[] = [];
-
   persona: any = {};
-
-
   projectForm = this.fb.group({
     codigo_Solicitud: ['', [Validators.required]],
     equipo: ['', Validators.required],
@@ -38,22 +35,61 @@ export class SolicitudEquiposComponent implements OnInit {
 
   
   __ConsultaSolicitud() {
-    this.disparate.disparadorData.emit(this.persona.Codigo_Solicitud);
+    
+    if(this.persona.Codigo_Solicitud != '' && this.persona.Codigo_Solicitud != undefined){
+      this.disparate.disparadorData.emit(this.persona.Codigo_Solicitud);
+      this.CodigoSolicitudBuscado = this.persona.Codigo_Solicitud;
+    }else{
+
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Favor ingresar una solicitud válida'
+      })
+
+    }
+
   }
 
   __insert(data: any) {
-    console.log(data);
+    
     this.ps.__be_insert(data).subscribe((rest: any) => {
-      console.log("Llegó");
+      console.log("Llegó: ", rest);
+      if(rest.issuccess){
+        Swal.fire({
+          title: '¡Registro Existoso!',
+          text: 'Su solicitud fue ingresada con correctamente',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        }).then(() => {
+          //this.refresh();
+        })
+
+      }else{
+        Swal.fire({
+          icon: 'warning',
+          title: 'Atención...',
+          text: 'Favor Verificar que los códigos de los equipos estén correctos.'
+        })
+      }
+      
     })
   }
 
 
-  guardar() {
-    this.personas.push(this.persona);
-    this.persona = {};
+  Agregar() {
 
-    console.log(this.personas);
+    if(this.CodigoSolicitudBuscado != 0){
+      this.persona.Codigo_Solicitud = this.CodigoSolicitudBuscado
+      this.personas.push(this.persona);
+      this.persona = {};
+    }else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Favor ingresar una solicitud válida'
+      })
+    }
   }
 
   refresh(): void {
@@ -61,20 +97,15 @@ export class SolicitudEquiposComponent implements OnInit {
   }
 
   __onSubmit() {
-    
-    Swal.fire({
-      title: 'Registro',
-      text: '¡Se ha registrado!',
-      icon: 'success',
-      confirmButtonText: 'Ok'
-    }).then(() => {
-      this.refresh();
-    })
-    
-    
-    this.__insert(this.personas);
-    console.log(this.personas);
-    /* console.log(this.guardar()); */
+    if(this.personas.length > 0){
+      this.__insert(this.personas);
+    }else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Favor registrar al menos un equipo'
+      })
+    }
     
   }
 

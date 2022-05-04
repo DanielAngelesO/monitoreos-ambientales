@@ -45,9 +45,9 @@
 </div>
 
 <div class="main-container ace-save-state" id="main-container">
-    <div id="sidebar" class="sidebar responsive ace-save-state">
+    <div *ngIf="token != null" id="sidebar" class="sidebar responsive ace-save-state">
 
-        <ul class="nav nav-list">
+        <ul   class="nav nav-list">
             <li class="active">
                 <a routerLink="home">
                     <i class="menu-icon fa fa-home"></i>

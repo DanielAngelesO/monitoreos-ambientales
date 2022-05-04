@@ -107,16 +107,16 @@
 
             <div class="widget-body">
                 <div class="widget-main padding-8">
-                    <div id="profile-feed-0" class="profile-feed">
+                    <div id="profile-feed-0" class="profile-feed listProject">
                         
-                        <div class="profile-activity clearfix">
+                        <div *ngFor="let lugar of proyecto.lugaresMuestreo" class="profile-activity clearfix">
                             <div> 
-                                <a class="user"> Tacna-Rios </a>  -                                 
-                                <a class="user"> Esquina Superior </a>
+                                <a class="user"> {{lugar.lugar_Muestreo}}</a>  -                                 
+                                <a class="user"> {{lugar.nombre_Punto}} </a>
 
                                 <div class="time">
                                     <i class="ace-icon glyphicon glyphicon-map-marker bigger-110"></i>
-                                    Latitud: 17.12135, Longitud: 9.35454
+                                    Latitud: {{lugar.coordenada_Latitud}}, Longitud: {{lugar.coordenada_Longitud}}                                    
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
 
             <div class="widget-body">
                 <div class="widget-main padding-8">
-                    <div id="profile-feed-2" class="profile-feed">
+                    <div id="profile-feed-2" class="profile-feed listProject">
                         
                         <div *ngFor="let equipo of proyecto.equipos" class="profile-activity clearfix">
                             <div>                                
@@ -171,7 +171,7 @@
 
             <div class="widget-body">
                 <div class="widget-main padding-8">
-                    <div id="profile-feed-1" class="profile-feed">
+                    <div id="profile-feed-1" class="profile-feed listProject">
                         <div *ngFor="let analista of proyecto.analistas" class="profile-activity clearfix">
                             <div>
                                 <img class="pull-left" alt="" src="assets/images/avatars/avatar2.png" />
@@ -190,5 +190,4 @@
     </article>
 
     
-
 </section>

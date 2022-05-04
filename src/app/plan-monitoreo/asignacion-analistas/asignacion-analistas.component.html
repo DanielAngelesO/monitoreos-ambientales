@@ -42,14 +42,14 @@
                                                 <div>
                                                     <div class="btn-group">
                                                         <button class="btn btn-success" (click)="__ConsultaSolicitud()" type="button">
-                                    <i class="ace-icon fa fa-registered"></i>
-                                    Buscar
-                                  </button>
+                                                        <i class="ace-icon fa fa-search"></i>
+                                                            Buscar
+                                                        </button>
 
                                                         <button class="btn btn-warning" type="button">
-                                    <i class="ace-icon fa fa-eraser"></i>
-                                    Limpiar
-                                  </button>
+                                                            <i class="ace-icon fa fa-eraser"></i>
+                                                            Limpiar
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </section>
@@ -78,48 +78,47 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label " for="form-field-1"> Analistas </label>
 
-                                        <div class="widget-body">
-                                            <div class="widget-main">
-                                                <div class="col-xs-15 col-sm-5">
+                                   
+                                        <div class="col-xs-12 col-sm-6">
 
-                                                    <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a State..." name="Codigo_Analista" [(ngModel)]="persona.Codigo_Analista">
-                                            
-                                            <option value="IA01">Luis Suarez Romero</option>
-                                            <option value="IA02">Pedro Ruiz Solis</option>
-                                            <option value="IA03">Yago Tejera Olmo</option>
-                                            <option value="IA04">Felix Ropero-Dominguez</option>
-                                            <option value="IA05">Federico Ferrero Vigil</option>
-                                            <option value="IA06">Sabas Nacio Sabater Salom</option>
-                                            <option value="IA07">Poncio Valentín Guitart Escolano</option>
-                                            <option value="IA08">Tomás Pombo Silva</option>
-                                            <option value="IA09">Fortunato Perelló Pinto</option>
-                                            <option value="IA10">Marcos Cordero Borja</option>
-
-                                            
-                                        </select>
-                                                </div>
-                                            </div>
-
+                                            <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Seleccione..." name="Codigo_Analista" [(ngModel)]="persona.Codigo_Analista">
+                                    
+                                                <option value="IA01">Luis Suarez Romero</option>
+                                                <option value="IA02">Pedro Ruiz Solis</option>
+                                                <option value="IA03">Yago Tejera Olmo</option>
+                                                <option value="IA04">Felix Ropero-Dominguez</option>
+                                                <option value="IA05">Federico Ferrero Vigil</option>
+                                                <option value="IA06">Sabas Nacio Sabater Salom</option>
+                                                <option value="IA07">Poncio Valentín Guitart Escolano</option>
+                                                <option value="IA08">Tomás Pombo Silva</option>
+                                                <option value="IA09">Fortunato Perelló Pinto</option>
+                                                <option value="IA10">Marcos Cordero Borja</option>
+                                            </select>
                                         </div>
-
-
-
                                     </div>
-
 
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label " for="form-field-1"> Cargo </label>
 
-                                        <div class="col-sm-10">
-                                            <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="Cargo" [(ngModel)]="persona.Cargo" />
+                                        <div class="col-xs-12 col-sm-6">
+                                            <!-- <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="Cargo" [(ngModel)]="persona.Cargo" /> -->
+
+                                            <select class="chosen-select form-control" id="cboCargo" data-placeholder="" name="Cargo" [(ngModel)]="persona.Cargo">
+                                            
+                                                <option value="JEFE">JEFE</option>
+                                                <option value="SUPERVISOR">SUPERVISOR</option>
+                                                <option value="OPERARIO">OPERARIO</option>                                                
+                                                <option value="ASISTENTE">ASISTENTE</option>
+                                                <option value="GUIA">GUIA</option>                                    
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label " for="form-field-1"> Tarea asignada </label>
+                                        <label class="col-sm-2 control-label " for="form-field-1"> Descripción de Tarea </label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" id="form-field-1" placeholder="analistas" class="col-xs-15 col-sm-5" name="Tarea_Asignada" [(ngModel)]="persona.Tarea_Asignada" />
+                                            <input type="text" id="form-field-1" placeholder="Tarea" class="col-xs-12 col-sm-12" name="Tarea_Asignada" [(ngModel)]="persona.Tarea_Asignada" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -151,9 +150,7 @@
                                                     <td>{{persona.Codigo_Analista}}</td>
                                                     <td>{{persona.Cargo}}</td>
                                                     <td>{{persona.Tarea_Asignada}}</td>
-
                                                 </tr>
-
                                             </tbody>
                                         </table>
                                     </form>

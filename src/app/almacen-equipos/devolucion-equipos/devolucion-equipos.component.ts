@@ -47,44 +47,62 @@ _EjecutarDevolucion()
 {
   if(this._obtenerSol()){  
     if(this.C_Solicitud.valid){
-      for( let item of this.equipos){
-      if(item.estado_Devolucion==0 && item.checked==true ){
-        this.equipos2[0].codigo_Solicitud=parseInt(this._obtenerSol(),10);
-        this.equipos2[0].equipo=item.codigo_Equipo;
-        console.log(this.equipos2)
-        this.ps._devolucionequipos(this.equipos2).subscribe((rest:any)=>{
-          if(rest.issuccess){
-            Swal.fire({
-              title: 'Registro',
-              text: '¡Equipos devuelto!',
-              icon: 'success',
-              confirmButtonText: 'Ok'
-            }).then(() => {
-              this.refresh();
+      
+      if(this.equipos.length > 0){
+        var numEquipos = 0;
+        for( let item of this.equipos){
+          if(item.estado_Devolucion==0 && item.checked==true){
+            this.equipos2[0].codigo_Solicitud=parseInt(this._obtenerSol(),10);
+            this.equipos2[0].equipo=item.codigo_Equipo;
+            console.log(this.equipos2)
+            this.ps._devolucionequipos(this.equipos2).subscribe((rest:any)=>{
+              if(rest.issuccess){
+                numEquipos = numEquipos+1;
+              }
+              else{
+                  alert(rest.errormessage);
+              }
             })
           }
-          else{
-               alert(rest.errormessage);
-          }
+
+
+        }
+
+        Swal.fire({
+          title: 'Operación Exitosa',
+          text: 'Se registraron' + numEquipos + ' devoluciones de equipos',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        }).then(() => {
+          //this.refresh();
         })
+
+
       }
-      }  
+      else{
+        console.log("verificando..")
+        Swal.fire({
+          icon: 'warning',
+          title: 'Atención!',
+          text: 'No hay equipos a devolver'      
+        })
+
+      }
+      
     }
+    else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Atención!',
+        text: 'Favor realizar la busqueda correcta de la orden de servicio'      
+      })
+    }
+  }
   else{
     Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Equipo no devuelto',
-      footer: '<a href="">Por favor corregir</a>'
-    })
-  }
-  }
-  else{
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Elegir Solicitud',
-      footer: '<a href="">Por favor corregir</a>'
+      icon: 'warning',
+      title: '¡Atención!',
+      text: 'Elegir Solicitud'
     })
   }
 }

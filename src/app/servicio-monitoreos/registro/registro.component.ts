@@ -14,7 +14,6 @@ export class RegistroComponent implements OnInit {
 
   title = 'sweetAlert';
 
-
   constructor(
     private _CargaScripts: CargarScriptsService,
     private fb: FormBuilder,
@@ -45,26 +44,39 @@ export class RegistroComponent implements OnInit {
   })
 
   formServicio = this.fb.group({    
-    Codigo_Solicitud: ['0', Validators.required],
-    Fecha_Tentativa: ['', Validators.required],
+    codigo_Solicitud: [0, Validators.required],
+    fecha_Tentativa: ['', Validators.required],
     // Descripcion_Servicio: ['', Validators.required],
-    Tipo_Servicio: ['', Validators.required],
+    cod_Servicio: ['', Validators.required],
     // Precio_Referencia: ['', Validators.required],
-    Cliente: this.formCliente,
+    cliente: this.formCliente,
     lugaresMuestreo: this.fb.array([])
   });
-
-  
-
-  LeerLugares(){
-    
-  }
-
   
 
   __insert(data: any) {
-    this.ps.__be_insert(data).subscribe((rest: any) => {
-      console.log("Llegó");
+    const token  = sessionStorage.getItem('token')
+    const header = { Authorization: 'Bearer ' + token }
+
+    this.ps.__be_insert(data, header).subscribe((rest: any) => {
+      if(rest.issuccess){
+        Swal.fire({
+          title: '¡Registro exitoso!',
+          text: 'Su orden fue registrado correctamente',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        }).then(() => {
+          this.refresh();
+        })
+      }else{
+        Swal.fire({
+          title: 'Atención',
+          text: 'Su solicitud no pudo ser procesada, favor verificar.',
+          icon: 'warning',
+          confirmButtonText: 'Ok'
+        })
+
+      }      
     })
   }
 
@@ -92,35 +104,24 @@ export class RegistroComponent implements OnInit {
   __onSubmit() {
     
     if (this.formCliente.valid) {
-      //   Swal.fire({
-      //   title: 'Registro',
-      //    text: '¡Se ha registrado!',
-      //   icon: 'success',
-      //   confirmButtonText: 'Ok'
-      //  })
-      //this.__insert(this.projectForm.value);
-      Swal.fire({
-        title: 'Registro',
-        text: '¡Se ha registrado!',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-      }).then(() => {
-        this.refresh();
-      })
+      
       const control = <FormArray>this.formServicio.get('lugaresMuestreo');
       this.personas.forEach(x =>{
         control.push(this.patchValues(x.coordenada_Latitud, x.coordenada_Lontigitud, x.lugar_Muestreo, x.nombre_Punto ));
       });
-
-      
-
-      this.__insert(this.formServicio.value);
-      /* this.__insert(this.personas); */
       console.log(this.formServicio.value);
-      console.log(this.personas);
+      this.__insert(this.formServicio.value);
+
     } else {
       
-      alert("Formulario no válido");
+      Swal.fire({
+        title: 'Atención',
+        text: 'Debe registrar todos los datos requeridos',
+        icon: 'warning',
+        confirmButtonText: 'Ok'
+      }).then(() => {
+        //this.refresh();
+      })
     }
   }
 

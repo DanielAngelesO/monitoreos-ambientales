@@ -7,19 +7,14 @@
     </ul>
 </div>
 
-<div class="page-content">
-    <button class="btn btn-primary"><span class="fa fa-plus-circle"></span> Nuevo informe</button>
-    <br>
-    <br>
+<div class="page-content">        
     <div class="row">
         <section class="col-sm-12">
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
-
-
                     <li class="active">
                         <a data-toggle="tab" href="#tabEmpresa">
-                  Por Empresa
+                  Búsqueda
                 </a>
                     </li>
                 </ul>
@@ -68,6 +63,7 @@
             <!-- PAGE CONTENT BEGINS -->
             <div class="row">
                 <div class="col-xs-12">
+                    <h3>Lugares de Muestreo</h3>
                     <table id="simple-table" class="table  table-bordered table-hover">
                         <thead>
                             <tr>
@@ -171,7 +167,7 @@
                                     <label class="col-sm-2 control-label no-padding-right" > Resultado de Medicion: </label>
         
                                     <div class="col-sm-10">
-                                        <input class="form-control" formControlName="resultado_Medicion" type="text" placeholder="Precio" class="col-xs-15 col-sm-5" />
+                                        <input class="form-control" formControlName="resultado_Medicion" type="text" placeholder="" class="col-xs-15 col-sm-5" />
                                     </div>
                                 </div>
                                 
@@ -183,6 +179,6 @@
 
             <div class="text-center">
                 <button (click)="_EjecutarDevolucion()" class="btn btn-success btn-block">Guardar</button>
-                <button class="btn btn-danger btn-block">Limpiar</button>
+                <button (click)="refresh()" class="btn btn-danger btn-block">Limpiar</button>
             </div>
         </div>

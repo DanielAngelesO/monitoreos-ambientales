@@ -62,30 +62,34 @@ export class GenerarPlanComponent implements OnInit {
       }
       else{
         Swal.fire({
-          icon: 'error',
+          icon: 'warning',
           title: 'Oops...',
-          text: 'Solicitud no valida',
-          footer: '<a href="">Por favor corregir</a>'
+          text: 'Solicitud no valida, favor verificar...'
         })
       }
       })
   }
   _insertarplan(data: any){
     this.pp2._insertarplan(data).subscribe((rest:any)=>{
-        if(rest.issuccess){
+      console.log(rest);
+
+      if(rest.issuccess){
           Swal.fire({
-            title: 'Registro',
+            title: '¡Registro existoso!',
             text: "Plan generado con solicitud "+this.proyecto[0].codigo_Solicitud,
             icon: 'success',
             confirmButtonText: 'Ok'
           }).then(() => {
             this.refresh();
           })
-        }
-        else{
-             alert(rest.errormessage)
-        }
-
+      }
+      else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Solicitud no valida. La orden de servicio ya cuenta con un plan generado, verifique...'          
+        })
+      }
     })
   }
 
@@ -117,28 +121,26 @@ export class GenerarPlanComponent implements OnInit {
 
   _GuardarPlan(){
  
-   if((<FormGroup>this.C_Plan.get('codigo_Solicitud')?.value)){
-    console.log(this.C_Plan.value)
-    if(this.C_Plan.valid){
-      this._insertarplan(this.C_Plan.value);
+    if((<FormGroup>this.C_Plan.get('codigo_Solicitud')?.value)){
+      console.log(this.C_Plan.value)
+      if(this.C_Plan.valid){
+        this._insertarplan(this.C_Plan.value);
+      }
+      else{
+        Swal.fire({
+          icon: 'warning',
+          title: 'Atención',
+          text: 'Favor ingresar todos los datos requeridos'
+        })
+      }
     }
-  else{
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Plan no guardado',
-      footer: '<a href="">Por favor corregir</a>'
-    })
-  }
-  }
-  else{
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Elegir Solicitud',
-    footer: '<a href="">Por favor corregir</a>'
-  })
-  }
+    else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Ingresar un solicitud válida'    
+      })
+    }
   }
 
   refresh(): void {

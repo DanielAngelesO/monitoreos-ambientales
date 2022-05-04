@@ -97,19 +97,12 @@
                                         <div class="form-group">
                                             <label class="control-label "> Fecha tentativa: </label>
                                             <div class="">
-                                                <input type="date" placeholder="Username@mail.com" class="col-sm-12" formControlName="Fecha_Tentativa" />
+                                                <input type="date" placeholder="Username@mail.com" class="col-sm-12" formControlName="fecha_Tentativa" />
                                             </div>
                                         </div>
                                     </section>
 
-                                    <section class="col-sm-3">
-                                        <div class="form-group">
-                                            <label class="control-label "> Descripción del servicio </label>
-                                            <div class="">
-                                                <input type="text" placeholder="Descripción del proyecto..." class="col-sm-12" formControlName="Descripcion_Servicio" />
-                                            </div>
-                                        </div>
-                                    </section>
+                                    
 
                                     <section class="col-sm-3">
                                         <div class="form-group">
@@ -117,7 +110,7 @@
                                         </label>
 
                                             <div class="">
-                                                <select id="inputState" class="col-sm-12" formControlName="Tipo_Servicio">
+                                                <select id="inputState" class="col-sm-12" formControlName="cod_Servicio">
                                                 <option value="S001">MONITOREO AGUA</option>
                                                 <option value="S002">MONITOREO AIRE</option>
                                                 <option value="S003">MONITOREO RUIDO</option>
@@ -129,14 +122,7 @@
                                         </div>
                                     </section>
 
-                                    <section class="col-sm-3">
-                                        <div class="form-group">
-                                            <label class="control-label " for=""> Precio de referencia </label>
-                                            <div class="">
-                                                <input type="number" id="" placeholder="100.0" class="col-sm-12 form-control" formControlName="Precio_Referencia" />
-                                            </div>
-                                        </div>
-                                    </section>
+                                    
                                 </fieldset>
                             </form>
                         </section>
@@ -232,7 +218,7 @@
                     </div>
                     <br>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Asignar</button>
+                        <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Registrar</button>
                         <button class="btn btn-danger btn-block">Cancelar</button>
                     </div>
                 </div>
