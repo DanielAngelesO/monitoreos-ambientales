@@ -44,11 +44,9 @@ __ConsultaServicio() {
 
 _EjecutarDevolucion()
 {
-  if(this._obtenerSol()){
-    
+  if(this._obtenerSol()){  
     if(this.C_Solicitud.valid){
       for( let item of this.equipos){
-
       if(item.estado_Devolucion==0 && item.checked==true ){
         this.equipos2[0].codigo_Solicitud=parseInt(this._obtenerSol(),10);
         this.equipos2[0].equipo=item.codigo_Equipo;
@@ -63,10 +61,7 @@ _EjecutarDevolucion()
           }
         })
       }
-
-
-      }
-      
+      }  
     }
   else{
     alert("Equipo no devuelto")
