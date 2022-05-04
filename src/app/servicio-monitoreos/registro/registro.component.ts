@@ -45,11 +45,11 @@ export class RegistroComponent implements OnInit {
   })
 
   formServicio = this.fb.group({    
-    Codigo_Servicio: ['', Validators.required],
+    Codigo_Solicitud: ['0', Validators.required],
     Fecha_Tentativa: ['', Validators.required],
-    Descripcion_Servicio: ['', Validators.required],
+    // Descripcion_Servicio: ['', Validators.required],
     Tipo_Servicio: ['', Validators.required],
-    Precio_Referencia: ['', Validators.required],
+    // Precio_Referencia: ['', Validators.required],
     Cliente: this.formCliente,
     lugaresMuestreo: this.fb.array([])
   });
