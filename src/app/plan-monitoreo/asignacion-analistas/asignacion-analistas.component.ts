@@ -74,7 +74,7 @@ export class AsignacionAnalistasComponent {
       this.refresh();
     })
     this.__insert(this.personas);
-    console.log(this.projectForm.value);
+    
     /* console.log(this.guardar()); */
     
   }

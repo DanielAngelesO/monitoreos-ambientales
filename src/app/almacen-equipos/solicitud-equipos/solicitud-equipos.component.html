@@ -2,161 +2,224 @@
     <ul class="breadcrumb">
         <li>
             <i class="ace-icon fa fa-registered"></i>
-            <a href="#"> &nbsp; Estimacion</a>
+            <a href="#"> &nbsp; Asignacion de especialista</a>
         </li>
     </ul>
 </div>
 
 <div class="page-content">
     <div class="row">
-
-        <section class="col-sm-12">
-            <div class="tabbable">
-                <ul class="nav nav-tabs" id="myTab">
-
-
-                    <li class="active">
-                        <a data-toggle="tab" href="#tabEmpresa">
-                Por Empresa
-              </a>
-                    </li>
-                </ul>
-
-                <div class="tab-content">
-                    <div id="tabCodigo" class="tab-pane fade in active">
-                        <div class="row">
-                            <section class="col-sm-12">
+        <form>
+            <section class="col-sm-12">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs" id="myTab">
 
 
-                                <form class="form">
-                                    <fieldset>
-                                        <section class="col-sm-2">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tabEmpresa">
+                  Por Empresa
+                </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="tabCodigo" class="tab-pane fade in active">
+                            <div class="row">
+                                <section class="col-sm-12">
+
+
+                                    <form class="form">
+                                        <fieldset>
+                                            <section class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label class="control-label"> Codigo de Proyecto </label>
+                                                    <div class="">
+                                                        <input type="number" id="" placeholder="" class="col-sm-12" name="Codigo_Solicitud" [(ngModel)]="persona.Codigo_Solicitud" required minlength="3">
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-success" (click)="__ConsultaSolicitud()" type="button">
+                                    <i class="ace-icon fa fa-registered"></i>
+                                    Buscar
+                                  </button>
+
+                                                        <button class="btn btn-warning" type="button">
+                                    <i class="ace-icon fa fa-eraser"></i>
+                                    Limpiar
+                                  </button>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+
+
+                                        </fieldset>
+                                        <app-informacion-solicitud></app-informacion-solicitud>
+
+
+
+
+
+
+
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="tab-content">
+                            <div class="row">
+
+                                <div class="col-sm-12">
+                                    <form class="form" role="form">
+
+                                        <!-- <div class="form-group">
+                                            <label class="col-sm-2 control-label " for="form-field-1"> Analistas </label>
+    
+                                            <div class="widget-body">
+                                                <div class="widget-main">
+                                                    <div class="col-xs-15 col-sm-5">
+    
+                                                        <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a State..." name="Codigo_Analista" [(ngModel)]="persona.Codigo_Analista">
+                                                
+                                                <option value="IA01">Luis Suarez Romero</option>
+                                                <option value="IA02">Pedro Ruiz Solis</option>
+                                                <option value="IA03">Yago Tejera Olmo</option>
+                                                <option value="IA04">Felix Ropero-Dominguez</option>
+                                                <option value="IA05">Federico Ferrero Vigil</option>
+                                                <option value="IA06">Sabas Nacio Sabater Salom</option>
+                                                <option value="IA07">Poncio Valentín Guitart Escolano</option>
+                                                <option value="IA08">Tomás Pombo Silva</option>
+                                                <option value="IA09">Fortunato Perelló Pinto</option>
+                                                <option value="IA10">Marcos Cordero Borja</option>
+    
+                                                
+                                            </select>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+    
+    
+    
+                                        </div> -->
+
+                                        <section class="col-sm-3">
+
                                             <div class="form-group">
-                                                <label class="control-label"> Codigo de Solicitud </label>
-                                                <div class="">
-                                                    <input type="text" id="" placeholder="" class="col-sm-12" />
+                                                <label class="control-label "> Equipo </label>
+
+                                                <div>
+                                                    <input type="text" id="form-field-1" placeholder="analistas" class="col-sm-12" name="equipo" [(ngModel)]="persona.equipo" />
                                                 </div>
                                             </div>
                                         </section>
 
+                                        <section class="col-sm-3">
 
-                                    </fieldset>
+                                            <div class="form-group">
+                                                <label class="control-label " for="form-field-1"> Cantidad </label>
+
+                                                <div>
+                                                    <input type="number" id="form-field-1" placeholder="analistas" class="col-sm-12" name="cantidad" [(ngModel)]="persona.cantidad" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="col-sm-3">
+
+                                            <div class="form-group">
+                                                <label class="ontrol-label " for="form-field-1"> Matriz </label>
+
+                                                <div>
+                                                    <input type="text" id="form-field-1" placeholder="analistas" class="col-sm-12" name="matriz" [(ngModel)]="persona.matriz" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="col-sm-3">
+
+                                            <div class="form-group">
+                                                <label class="control-label " for="form-field-1"> Fecha de salida </label>
+
+                                                <div>
+                                                    <input type="date" id="form-field-1" placeholder="analistas" class="col-sm-12" name="fecha_Salida" [(ngModel)]="persona.fecha_Salida" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="col-sm-3">
+
+                                            <div class="form-group">
+                                                <label class="control-label " for="form-field-1"> Fecha de Retorno </label>
+
+                                                <div>
+                                                    <input type="date" id="form-field-1" placeholder="analistas" class="col-sm-12" name="fecha_Retorno" [(ngModel)]="persona.fecha_Retorno" />
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="col-sm-2">
+
+                                            <label class="control-label" for=""></label>
+                                            <div class="form-group">
+
+                                                <button class="btn btn-primary col-sm-10" (click)="guardar()">Agregar</button>
+                                            </div>
+                                        </section>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="tab-content">
+                            <div>
+                                <div class="col-xs-12">
+                                    <form action="" [formGroup]="projectForm">
+
+                                        <table id="simple-table" class="table  table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="center">CODIGO DE SOLICITUD</th>
+                                                    <th>EQUIPO</th>
+                                                    <th>CANTIDAD</th>
+                                                    <th>MATRIZ</th>
+                                                    <th>FECHA DE SALIDA</th>
+                                                    <th>FECHA DE RETORNO</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr *ngFor="let persona of personas">
+                                                    <td>{{persona.Codigo_Solicitud}}</td>
+                                                    <td>{{persona.equipo}}</td>
+                                                    <td>{{persona.cantidad}}</td>
+                                                    <td>{{persona.matriz}}</td>
+                                                    <td>{{persona.fecha_Salida}}</td>
+                                                    <td>{{persona.fecha_Retorno}}</td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </form>
 
 
-                                    <footer class="form-actions">
-                                        <div class="btn-group">
-                                            <button class="btn btn-success" type="button">
-                          <i class="ace-icon fa fa-registered"></i>
-                          Buscar
-                        </button>
-
-                                            <button class="btn btn-warning" type="button">
-                          <i class="ace-icon fa fa-eraser"></i>
-                          Limpiar
-                        </button>
-                                        </div>
-
-
-                                    </footer>
-
-
-
-
-                                </form>
-                            </section>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success btn-block" (click)="__onSubmit() ">Asignar</button>
+                                <button class="btn btn-danger btn-block">Cancelar</button>
+                            </div>
                         </div>
                     </div>
-
-
-                    <div class="page-content">
-                        <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <h3>SOLICITUD DE EQUIPOS</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4>DATOS DEL CLIENTE</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <h5>EMPRESA</h5>
-                            </div>
-                            <div class="col-lg-8">
-                                <h5>ALS LS PERU SAC</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <h5>RUC</h5>
-                            </div>
-                            <div class="col-lg-8">
-                                <h5>20504979092</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <h5>E-mail</h5>
-                            </div>
-                            <div class="col-lg-8">
-                                <h5>Daniel_Nahuis@als.com.pe</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4>EQUIPOS</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <h6>Hivol</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Estacion Metereologica</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Analizador Automatico</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Generador Electrico</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Lowvol</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Tren de Muestreo</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Multiparametro</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Colorimetro</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Turbidimetro</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Correntometro</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Sonda de Interface</h6>
-                            </div>
-                            <div class="col-lg-4">
-                                <h6>Sonometro</h6>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4" style="padding-top:30px;"><a class="btn btn-primary" href="#" role="button">Aceptar</a></div>
-                            <div class="col-lg-4" style="padding-top:30px;"><a class="btn btn-danger" href="#" role="button">Cancelar</a></div>
-                            <div class="col-lg-4"></div>
-                        </div>
-                    </div>
-
-
-                    <br>
-                    <div class="text-center">
-                        <button class="btn btn-success btn-block">Agregar</button>
-                        <button class="btn btn-danger btn-block">Cancelar</button>
-                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>

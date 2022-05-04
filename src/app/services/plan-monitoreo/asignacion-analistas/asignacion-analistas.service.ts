@@ -22,11 +22,11 @@ export class AsignacionAnalistasService {
 
   __be_insert(data: any) {
     console.log(data);
-    return data;
+    /* return data; */
     
 
-   /*   const headers = { 'content-type': 'application/json'}
-     return this.http.post('https://localhost:44309/api/AnalistaPoryecto/insert', data, {headers}); */
+     const headers = { 'content-type': 'application/json'}
+     return this.http.post('https://localhost:44309/api/AnalistaPoryecto/insert', data, {headers});
   }
 
 }
