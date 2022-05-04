@@ -14,4 +14,5 @@ export class SolicitudEquiposService {
   __getSolicitud(){
     return this.http.get('');
   }
+  
 }
