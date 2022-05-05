@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { SolicitudEquiposService } from 'src/app/services/almacen-equipos/solicitud-equipos/solicitud-equipos.service';
 import { DisparadorDataService } from 'src/app/services/Disparadores/disparador-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solicitud-equipos',
@@ -14,7 +15,8 @@ export class SolicitudEquiposComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private readonly ps: SolicitudEquiposService,
-    private disparate: DisparadorDataService
+    private disparate: DisparadorDataService,
+    private router: Router
   ) {
 
   }
@@ -110,6 +112,10 @@ export class SolicitudEquiposComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    var token = sessionStorage.getItem('token');
+    if(token == null){
+      this.router.navigate(['logout']);
+    }
   }
 
 }

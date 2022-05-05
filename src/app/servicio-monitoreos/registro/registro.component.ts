@@ -130,7 +130,10 @@ export class RegistroComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    var token = sessionStorage.getItem('token');
+    if(token == null){
+      this.router.navigate(['logout']);
+    }
 
   }
 }
