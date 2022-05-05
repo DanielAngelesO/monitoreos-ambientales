@@ -129,6 +129,36 @@
         <div class="hr hr2 hr-double"></div>
     </article>
 
+
+    <article class="col-xs-12 col-sm-4">
+        <div id="Analistas" class="widget-box transparent">
+            <div class="widget-header widget-header-small">
+                <h4 class="widget-title blue smaller">
+                    <i class="ace-icon fa fa-users green"></i>
+                    Analistas a cargo
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main padding-8">
+                    <div id="profile-feed-1" class="profile-feed listProject">
+                        <div *ngFor="let analista of proyecto.analistas" class="profile-activity clearfix">
+                            <div>
+                                <img class="pull-left" alt="" src="assets/images/avatars/avatar2.png" />
+                                <a class="user" > {{analista.nombre_Analista}} </a>
+                                <div class="time">                                    
+                                    <a>{{analista.grado_Instruccion}}</a>, Tarea: {{analista.tarea_Asignada}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr hr2 hr-double"></div>
+    </article>
+
     <article class="col-xs-12 col-sm-4">
         <div id="Equipos" class="widget-box transparent">
             <div class="widget-header widget-header-small">
@@ -149,35 +179,6 @@
                                 <div class="time">
                                     <i class="ace-icon glyphicon glyphicon-barcode"></i>
                                     Marca: {{equipo.marca}}, Modelo: {{equipo.modelo}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hr hr2 hr-double"></div>
-    </article>
-
-    <article class="col-xs-12 col-sm-4">
-        <div id="Analistas" class="widget-box transparent">
-            <div class="widget-header widget-header-small">
-                <h4 class="widget-title blue smaller">
-                    <i class="ace-icon fa fa-users green"></i>
-                    Analistas a cargo
-                </h4>
-            </div>
-
-            <div class="widget-body">
-                <div class="widget-main padding-8">
-                    <div id="profile-feed-1" class="profile-feed listProject">
-                        <div *ngFor="let analista of proyecto.analistas" class="profile-activity clearfix">
-                            <div>
-                                <img class="pull-left" alt="" src="assets/images/avatars/avatar2.png" />
-                                <a class="user" > {{analista.nombre_Analista}} </a>
-                                <div class="time">                                    
-                                    <a>{{analista.grado_Instruccion}}</a>, Especialidad: {{analista.especialidad}}
                                 </div>
                             </div>
                         </div>

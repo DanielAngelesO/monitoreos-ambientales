@@ -11,7 +11,7 @@ export class AprobacionSolicitudEquiposService {
   ) { }
 
 
-  __getAprobacion(){
-    return this.http.get('');
+  __getAprobacion(cod_Solcitud: any){
+    return this.http.get('https://localhost:44309/api/EquiposProyecto/Aprobar?CodigoSolicitud=' + cod_Solcitud);
   }
 }

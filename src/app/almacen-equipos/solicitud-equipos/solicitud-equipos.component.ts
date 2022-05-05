@@ -62,7 +62,7 @@ export class SolicitudEquiposComponent implements OnInit {
           icon: 'success',
           confirmButtonText: 'Ok'
         }).then(() => {
-          //this.refresh();
+          this.refresh();
         })
 
       }else{

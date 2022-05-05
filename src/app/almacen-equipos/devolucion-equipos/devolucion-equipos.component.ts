@@ -74,7 +74,7 @@ _EjecutarDevolucion()
           icon: 'success',
           confirmButtonText: 'Ok'
         }).then(() => {
-          //this.refresh();
+          this.refresh();
         })
 
 

@@ -33,8 +33,7 @@ export class ConsultaMonitoreosComponent implements OnInit {
       
   }
 
-  __Prueba(){
-      console.log('hollaa');
+  __Prueba(){      
       GetScroll();
   }
 
